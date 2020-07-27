@@ -1,0 +1,78 @@
+rbac package
+============
+
+Submodules
+----------
+
+rbac.celery module
+------------------
+
+.. automodule:: rbac.celery
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rbac.database module
+--------------------
+
+.. automodule:: rbac.database
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rbac.dev\_middleware module
+---------------------------
+
+.. automodule:: rbac.dev_middleware
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rbac.env module
+---------------
+
+.. automodule:: rbac.env
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rbac.middleware module
+----------------------
+
+.. automodule:: rbac.middleware
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rbac.settings module
+--------------------
+
+.. automodule:: rbac.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rbac.urls module
+----------------
+
+.. automodule:: rbac.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+rbac.wsgi module
+----------------
+
+.. automodule:: rbac.wsgi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: rbac
+   :members:
+   :undoc-members:
+   :show-inheritance:

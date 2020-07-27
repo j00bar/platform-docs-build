@@ -1,0 +1,46 @@
+management.group package
+========================
+
+Submodules
+----------
+
+management.group.definer module
+-------------------------------
+
+.. automodule:: management.group.definer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.group.model module
+-----------------------------
+
+.. automodule:: management.group.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.group.serializer module
+----------------------------------
+
+.. automodule:: management.group.serializer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.group.view module
+----------------------------
+
+.. automodule:: management.group.view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management.group
+   :members:
+   :undoc-members:
+   :show-inheritance:

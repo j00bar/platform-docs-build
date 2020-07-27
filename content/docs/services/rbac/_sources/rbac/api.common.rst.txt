@@ -1,0 +1,30 @@
+api.common package
+==================
+
+Submodules
+----------
+
+api.common.exception\_handler module
+------------------------------------
+
+.. automodule:: api.common.exception_handler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+api.common.pagination module
+----------------------------
+
+.. automodule:: api.common.pagination
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: api.common
+   :members:
+   :undoc-members:
+   :show-inheritance:

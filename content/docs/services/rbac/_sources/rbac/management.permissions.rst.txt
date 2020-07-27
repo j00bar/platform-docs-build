@@ -1,0 +1,54 @@
+management.permissions package
+==============================
+
+Submodules
+----------
+
+management.permissions.admin\_access module
+-------------------------------------------
+
+.. automodule:: management.permissions.admin_access
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.permissions.group\_access module
+-------------------------------------------
+
+.. automodule:: management.permissions.group_access
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.permissions.policy\_access module
+--------------------------------------------
+
+.. automodule:: management.permissions.policy_access
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.permissions.role\_access module
+------------------------------------------
+
+.. automodule:: management.permissions.role_access
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.permissions.utils module
+-----------------------------------
+
+.. automodule:: management.permissions.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management.permissions
+   :members:
+   :undoc-members:
+   :show-inheritance:

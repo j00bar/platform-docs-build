@@ -1,0 +1,79 @@
+backend:
+  name: github
+  branch: master
+  repo: RedHatInsights/platform-docs
+publish_mode: editorial_workflow
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: "root"
+    label: "Docs root"
+    folder: "content/docs"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Body
+        name: body
+        widget: markdown
+  - name: "intro"
+    label: "Introduction"
+    folder: "content/docs/intro"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Body
+        name: body
+        widget: markdown
+  - name: "tutorial"
+    label: "Tutorial"
+    folder: "content/docs/tutorial"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Body
+        name: body
+        widget: markdown
+
+  - name: "reference"
+    label: "Reference"
+    folder: "content/docs/reference"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Body
+        name: body
+        widget: markdown
+  - name: "reference-rest"
+    label: "REST API Reference"
+    folder: "content/docs/reference/rest"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Body
+        name: body
+        widget: markdown

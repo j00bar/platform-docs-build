@@ -1,0 +1,54 @@
+management.principal package
+============================
+
+Submodules
+----------
+
+management.principal.cleaner module
+-----------------------------------
+
+.. automodule:: management.principal.cleaner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.principal.model module
+---------------------------------
+
+.. automodule:: management.principal.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.principal.proxy module
+---------------------------------
+
+.. automodule:: management.principal.proxy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.principal.serializer module
+--------------------------------------
+
+.. automodule:: management.principal.serializer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.principal.view module
+--------------------------------
+
+.. automodule:: management.principal.view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management.principal
+   :members:
+   :undoc-members:
+   :show-inheritance:

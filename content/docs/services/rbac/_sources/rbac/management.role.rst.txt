@@ -1,0 +1,46 @@
+management.role package
+=======================
+
+Submodules
+----------
+
+management.role.definer module
+------------------------------
+
+.. automodule:: management.role.definer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.role.model module
+----------------------------
+
+.. automodule:: management.role.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.role.serializer module
+---------------------------------
+
+.. automodule:: management.role.serializer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.role.view module
+---------------------------
+
+.. automodule:: management.role.view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management.role
+   :members:
+   :undoc-members:
+   :show-inheritance:

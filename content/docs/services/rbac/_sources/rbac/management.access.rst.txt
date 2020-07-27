@@ -1,0 +1,22 @@
+management.access package
+=========================
+
+Submodules
+----------
+
+management.access.view module
+-----------------------------
+
+.. automodule:: management.access.view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management.access
+   :members:
+   :undoc-members:
+   :show-inheritance:

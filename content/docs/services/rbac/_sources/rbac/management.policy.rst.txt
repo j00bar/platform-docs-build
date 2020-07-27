@@ -1,0 +1,38 @@
+management.policy package
+=========================
+
+Submodules
+----------
+
+management.policy.model module
+------------------------------
+
+.. automodule:: management.policy.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.policy.serializer module
+-----------------------------------
+
+.. automodule:: management.policy.serializer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.policy.view module
+-----------------------------
+
+.. automodule:: management.policy.view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management.policy
+   :members:
+   :undoc-members:
+   :show-inheritance:

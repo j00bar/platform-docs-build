@@ -1,0 +1,124 @@
+management package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   management.access
+   management.group
+   management.migrations
+   management.permissions
+   management.policy
+   management.principal
+   management.role
+
+Submodules
+----------
+
+management.apps module
+----------------------
+
+.. automodule:: management.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.cache module
+-----------------------
+
+.. automodule:: management.cache
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.filters module
+-------------------------
+
+.. automodule:: management.filters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.models module
+------------------------
+
+.. automodule:: management.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.querysets module
+---------------------------
+
+.. automodule:: management.querysets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.rbac\_fields module
+------------------------------
+
+.. automodule:: management.rbac_fields
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.seeds module
+-----------------------
+
+.. automodule:: management.seeds
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.serializers module
+-----------------------------
+
+.. automodule:: management.serializers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.tasks module
+-----------------------
+
+.. automodule:: management.tasks
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.urls module
+----------------------
+
+.. automodule:: management.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.utils module
+-----------------------
+
+.. automodule:: management.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.views module
+-----------------------
+
+.. automodule:: management.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management
+   :members:
+   :undoc-members:
+   :show-inheritance:
