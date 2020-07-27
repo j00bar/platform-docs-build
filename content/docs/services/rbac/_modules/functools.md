@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:41:09.520492
+date: 2020-07-27 13:43:42.396566
 title: Source code for functools
 ---
 

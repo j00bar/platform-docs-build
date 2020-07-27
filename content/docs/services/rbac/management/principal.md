@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:41:14.778495
+date: 2020-07-27 13:43:47.801569
 title: Managing Principals
 ---
 <div id="managing-principals" class="section">
