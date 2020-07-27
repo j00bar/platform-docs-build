@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:43:41.837566
+date: 2020-07-27 13:50:42.748194
 title: Working with OpenShift
 ---
 <div id="working-with-openshift" class="section">
