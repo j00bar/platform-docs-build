@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 10:12:23.125113
+date: 2020-07-27 10:48:55.423206
 title: Contributing to insights-rbac
 ---
 <div id="contributing-to-insights-rbac" class="section">
