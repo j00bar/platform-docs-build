@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 10:48:55.378206
+date: 2020-07-27 13:41:09.221492
 title: Insights Role Based Access Control README
 ---
 <div id="insights-role-based-access-control-readme" class="section">

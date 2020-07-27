@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 10:48:59.876212
+date: 2020-07-27 13:41:13.812494
 title: management.principal package
 ---
 <div id="management-principal-package" class="section">

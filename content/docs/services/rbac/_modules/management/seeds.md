@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 10:48:56.384208
+date: 2020-07-27 13:41:10.258492
 title: Source code for management.seeds
 ---
 
@@ -64,7 +64,7 @@ title: Source code for management.seeds
         from management.role.definer import seed_roles, seed_permissions
         from rbac.settings import MAX_SEED_THREADS
     
-        seed_functions = {"role": partial(seed_roles, update=True), "group": seed_group, "permission": seed_permissions}
+        seed_functions = {"role": seed_roles, "group": seed_group, "permission": seed_permissions}
     
         try:
             with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_SEED_THREADS) as executor:

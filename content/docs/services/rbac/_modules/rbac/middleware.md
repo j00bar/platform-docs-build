@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 10:48:56.187207
+date: 2020-07-27 13:41:10.053492
 title: Source code for rbac.middleware
 ---
 
@@ -87,7 +87,7 @@ title: Source code for rbac.middleware
                         )
                         if created:
                             seed_permissions(tenant=tenant)
-                            seed_roles(tenant=tenant, update=False)
+                            seed_roles(tenant=tenant)
                             seed_group(tenant=tenant)
                 TENANTS[request.user.account] = tenant
             return TENANTS[request.user.account]

@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 10:48:59.785212
+date: 2020-07-27 13:41:13.718494
 title: management.role package
 ---
 <div id="management-role-package" class="section">
@@ -30,9 +30,8 @@ Handler for system defined roles.
 
   - `  management.role.definer.  ` `  seed_roles  `
     <span class="sig-paren"> ( </span> *<span class="n"> tenant </span>*
-    , *<span class="n"> update </span> <span class="o"> = </span>
-    <span class="default_value"> False </span>* <span class="sig-paren">
-    ) </span> [<span class="viewcode-link"> \[source\]
+    <span class="sig-paren"> ) </span> [<span class="viewcode-link">
+    \[source\]
     </span>](../../_modules/management/role/definer/#seed_roles)  
     For a tenant update or create system defined roles.
 
