@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:50:42.748194
+date: 2020-08-03 13:09:33
 title: All modules for which code is available
 weight: 0
 ---
@@ -25,6 +25,9 @@ weight: 0
   - [management.group.model](management/group/model/)
   - [management.group.serializer](management/group/serializer/)
   - [management.group.view](management/group/view/)
+  - [management.permission.model](management/permission/model/)
+  - [management.permission.serializer](management/permission/serializer/)
+  - [management.permission.view](management/permission/view/)
   - [management.permissions.admin\_access](management/permissions/admin_access/)
   - [management.permissions.group\_access](management/permissions/group_access/)
   - [management.permissions.policy\_access](management/permissions/policy_access/)

@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:51:55.867676
+date: 2019-10-02 16:04:47
 title: Build and Deployment of the API Gateways
 ---
 

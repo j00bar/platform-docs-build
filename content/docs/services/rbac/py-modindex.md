@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:50:42.748194
+date: 2020-08-03 13:09:33
 title: Python Module Index
 ---
 
@@ -174,6 +174,26 @@ title: Python Module Index
 <tr class="odd">
 <td></td>
 <td><a href="../rbac/management/#module-management.models"><code class="xref">      management.models     </code></a></td>
+<td><em></em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="../rbac/management.permission/#module-management.permission"><code class="xref">      management.permission     </code></a></td>
+<td><em></em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="../rbac/management.permission/#module-management.permission.model"><code class="xref">      management.permission.model     </code></a></td>
+<td><em></em></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="../rbac/management.permission/#module-management.permission.serializer"><code class="xref">      management.permission.serializer     </code></a></td>
+<td><em></em></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="../rbac/management.permission/#module-management.permission.view"><code class="xref">      management.permission.view     </code></a></td>
 <td><em></em></td>
 </tr>
 <tr class="even">

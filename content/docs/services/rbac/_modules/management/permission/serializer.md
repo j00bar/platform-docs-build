@@ -1,6 +1,6 @@
 ---
 date: 2020-08-03 13:09:33
-title: Source code for api.status.serializer
+title: Source code for management.permission.serializer
 ---
 
 <div class="highlight">
@@ -22,26 +22,18 @@ title: Source code for api.status.serializer
     # along with this program.  If not, see <https://www.gnu.org/licenses/>.
     #
     
-    """Serializer to capture server status."""
-    
+    """Serializer for permission management."""
+    from management.models import Permission
     from rest_framework import serializers
     
-    from .model import Status
     
-    
-    [docs]class StatusSerializer(serializers.Serializer):
-        """Serializer for the Status model."""
-    
-        api_version = serializers.IntegerField()
-        commit = serializers.CharField()
-        modules = serializers.DictField()
-        platform_info = serializers.DictField()
-        python_version = serializers.CharField()
+    [docs]class PermissionSerializer(serializers.ModelSerializer):
+        """Serializer for the Permission model."""
     
     [docs]    class Meta:
             """Metadata for the serializer."""
     
-            model = Status
-            fields = "__all__"
+            model = Permission
+            fields = ("application", "resource_type", "verb", "permission")
 
 </div>

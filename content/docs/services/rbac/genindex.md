@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:50:42.748194
+date: 2020-08-03 13:09:33
 title: Index
 ---
 
@@ -102,7 +102,7 @@ title: Index
 </ul></li>
 <li><a href="../rbac/api.status/#api.status.model.Status.api_version">api_version() (api.status.model.Status property)</a></li>
 <li><a href="../rbac/api/#api.apps.ApiConfig">ApiConfig (class in api.apps)</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission.application">application (management.role.model.Permission attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.application">application (management.permission.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.ResourceDefinition.attributeFilter">attributeFilter (management.role.model.ResourceDefinition attribute)</a></li>
 <li><a href="../rbac/api/#api.models.Tenant.auto_drop_schema">auto_drop_schema (api.models.Tenant attribute)</a></li>
 <li><a href="../rbac/management/#management.rbac_fields.AutoDateTimeField">AutoDateTimeField (class in management.rbac_fields)</a></li>
@@ -124,6 +124,7 @@ title: Index
 <li><a href="../rbac/management/#management.filters.CommonFilters.base_filters">base_filters (management.filters.CommonFilters attribute)</a>
 <ul>
 <li><a href="../rbac/management.group/#management.group.view.GroupFilter.base_filters">(management.group.view.GroupFilter attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionFilter.base_filters">(management.permission.view.PermissionFilter attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyFilter.base_filters">(management.policy.view.PolicyFilter attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleFilter.base_filters">(management.role.view.RoleFilter attribute)</a></li>
 </ul></li>
@@ -131,6 +132,7 @@ title: Index
 <td><ul>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.basename">basename (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.basename">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.basename">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.basename">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
@@ -191,6 +193,7 @@ title: Index
 <li><a href="../rbac/management/#management.filters.CommonFilters.declared_filters">declared_filters (management.filters.CommonFilters attribute)</a>
 <ul>
 <li><a href="../rbac/management.group/#management.group.view.GroupFilter.declared_filters">(management.group.view.GroupFilter attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionFilter.declared_filters">(management.permission.view.PermissionFilter attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyFilter.declared_filters">(management.policy.view.PolicyFilter attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleFilter.declared_filters">(management.role.view.RoleFilter attribute)</a></li>
 </ul></li>
@@ -201,6 +204,7 @@ title: Index
 <li><a href="../rbac/management.group/#management.group.model.Group.description">description (management.group.model.Group attribute)</a>
 <ul>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.description">(management.group.view.GroupViewSet attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.description">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.model.Policy.description">(management.policy.model.Policy attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.description">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Role.description">(management.role.model.Role attribute)</a></li>
@@ -215,6 +219,7 @@ title: Index
 </ul></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.detail">detail (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.detail">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.detail">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.detail">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
@@ -262,6 +267,7 @@ title: Index
 <li><a href="../rbac/management.group/#management.group.serializer.GroupPrincipalInputSerializer.Meta.fields">(management.group.serializer.GroupPrincipalInputSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.group/#management.group.serializer.GroupSerializer.Meta.fields">(management.group.serializer.GroupSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupFilter.Meta.fields">(management.group.view.GroupFilter.Meta attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.serializer.PermissionSerializer.Meta.fields">(management.permission.serializer.PermissionSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.serializer.PolicyInputSerializer.Meta.fields">(management.policy.serializer.PolicyInputSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.serializer.PolicySerializer.Meta.fields">(management.policy.serializer.PolicySerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyFilter.Meta.fields">(management.policy.view.PolicyFilter.Meta attribute)</a></li>
@@ -278,6 +284,7 @@ title: Index
 <td><ul>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.filter_backends">filter_backends (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.filter_backends">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.filter_backends">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.filter_backends">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
@@ -286,6 +293,7 @@ title: Index
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.filters_from_params">filters_from_params() (management.group.view.GroupViewSet method)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.filterset_class">filterset_class (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.filterset_class">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.filterset_class">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.filterset_class">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
@@ -448,10 +456,10 @@ title: Index
 <li><a href="../rbac/api/#api.models.Tenant.id">id (api.models.Tenant attribute)</a>
 <ul>
 <li><a href="../rbac/management.group/#management.group.model.Group.id">(management.group.model.Group attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.id">(management.permission.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.model.Policy.id">(management.policy.model.Policy attribute)</a></li>
 <li><a href="../rbac/management.principal/#management.principal.model.Principal.id">(management.principal.model.Principal attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Access.id">(management.role.model.Access attribute)</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission.id">(management.role.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.ResourceDefinition.id">(management.role.model.ResourceDefinition attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Role.id">(management.role.model.Role attribute)</a></li>
 </ul></li>
@@ -494,6 +502,7 @@ title: Index
 <li><a href="../rbac/api.common/#api.common.pagination.StandardResultsSetPagination.link_rewrite">link_rewrite() (api.common.pagination.StandardResultsSetPagination static method)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.list">list() (management.group.view.GroupViewSet method)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.list">(management.permission.view.PermissionViewSet method)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.list">(management.policy.view.PolicyViewSet method)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.list">(management.role.view.RoleViewSet method)</a></li>
 </ul></li>
@@ -570,6 +579,22 @@ title: Index
 <li>management.models
 <ul>
 <li><a href="../rbac/management/#module-management.models">module</a></li>
+</ul></li>
+<li>management.permission
+<ul>
+<li><a href="../rbac/management.permission/#module-management.permission">module</a></li>
+</ul></li>
+<li>management.permission.model
+<ul>
+<li><a href="../rbac/management.permission/#module-management.permission.model">module</a></li>
+</ul></li>
+<li>management.permission.serializer
+<ul>
+<li><a href="../rbac/management.permission/#module-management.permission.serializer">module</a></li>
+</ul></li>
+<li>management.permission.view
+<ul>
+<li><a href="../rbac/management.permission/#module-management.permission.view">module</a></li>
 </ul></li>
 <li>management.permissions
 <ul>
@@ -687,15 +712,16 @@ title: Index
 <ul>
 <li><a href="../rbac/management/#module-management.views">module</a></li>
 </ul></li>
-<li><a href="../rbac/management/#management.apps.ManagementConfig">ManagementConfig (class in management.apps)</a></li>
 </ul></td>
 <td><ul>
+<li><a href="../rbac/management/#management.apps.ManagementConfig">ManagementConfig (class in management.apps)</a></li>
 <li><a href="../rbac/api.common/#api.common.pagination.StandardResultsSetPagination.max_limit">max_limit (api.common.pagination.StandardResultsSetPagination attribute)</a></li>
 <li><a href="../rbac/api.status/#api.status.serializer.StatusSerializer.Meta.model">model (api.status.serializer.StatusSerializer.Meta attribute)</a>
 <ul>
 <li><a href="../rbac/management.group/#management.group.serializer.GroupInputSerializer.Meta.model">(management.group.serializer.GroupInputSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.group/#management.group.serializer.GroupSerializer.Meta.model">(management.group.serializer.GroupSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupFilter.Meta.model">(management.group.view.GroupFilter.Meta attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.serializer.PermissionSerializer.Meta.model">(management.permission.serializer.PermissionSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.serializer.PolicyInputSerializer.Meta.model">(management.policy.serializer.PolicyInputSerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.serializer.PolicySerializer.Meta.model">(management.policy.serializer.PolicySerializer.Meta attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyFilter.Meta.model">(management.policy.view.PolicyFilter.Meta attribute)</a></li>
@@ -741,6 +767,10 @@ title: Index
 <li><a href="../rbac/management.group/#module-management.group.serializer">management.group.serializer</a></li>
 <li><a href="../rbac/management.group/#module-management.group.view">management.group.view</a></li>
 <li><a href="../rbac/management/#module-management.models">management.models</a></li>
+<li><a href="../rbac/management.permission/#module-management.permission">management.permission</a></li>
+<li><a href="../rbac/management.permission/#module-management.permission.model">management.permission.model</a></li>
+<li><a href="../rbac/management.permission/#module-management.permission.serializer">management.permission.serializer</a></li>
+<li><a href="../rbac/management.permission/#module-management.permission.view">management.permission.view</a></li>
 <li><a href="../rbac/management.permissions/#module-management.permissions">management.permissions</a></li>
 <li><a href="../rbac/management.permissions/#module-management.permissions.admin_access">management.permissions.admin_access</a></li>
 <li><a href="../rbac/management.permissions/#module-management.permissions.group_access">management.permissions.group_access</a></li>
@@ -801,6 +831,7 @@ title: Index
 <li><a href="../rbac/management/#management.apps.ManagementConfig.name">(management.apps.ManagementConfig attribute)</a></li>
 <li><a href="../rbac/management.group/#management.group.model.Group.name">(management.group.model.Group attribute)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.name">(management.group.view.GroupViewSet attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.name">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.model.Policy.name">(management.policy.model.Policy attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.name">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Role.name">(management.role.model.Role attribute)</a></li>
@@ -826,28 +857,30 @@ title: Index
 <td><ul>
 <li><a href="../rbac/management.group/#management.group.model.Group.objects">objects (management.group.model.Group attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.objects">(management.permission.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.model.Policy.objects">(management.policy.model.Policy attribute)</a></li>
 <li><a href="../rbac/management.principal/#management.principal.model.Principal.objects">(management.principal.model.Principal attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Access.objects">(management.role.model.Access attribute)</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission.objects">(management.role.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.ResourceDefinition.objects">(management.role.model.ResourceDefinition attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Role.objects">(management.role.model.Role attribute)</a></li>
 </ul></li>
 <li><a href="../rbac/management.role/#management.role.serializer.obtain_applications">obtain_applications() (in module management.role.serializer)</a></li>
 <li><a href="../rbac/management.role/#management.role.serializer.obtain_groups_in">obtain_groups_in() (in module management.role.serializer)</a></li>
+<li><a href="../rbac/management.group/#management.group.view.GroupViewSet.obtain_roles">obtain_roles() (management.group.view.GroupViewSet method)</a></li>
 </ul></td>
 <td><ul>
-<li><a href="../rbac/management.group/#management.group.view.GroupViewSet.obtain_roles">obtain_roles() (management.group.view.GroupViewSet method)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.obtain_roles_with_exclusion">obtain_roles_with_exclusion() (management.group.view.GroupViewSet method)</a></li>
 <li><a href="../rbac/management/#management.seeds.on_complete">on_complete() (in module management.seeds)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.order_queryset">order_queryset() (management.group.view.GroupViewSet method)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.ordering">ordering (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.ordering">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.ordering">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.ordering">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.ordering_fields">ordering_fields (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.ordering_fields">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.ordering_fields">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.ordering_fields">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
@@ -870,22 +903,27 @@ title: Index
 <li><a href="../rbac/management.access/#management.access.view.AccessView.pagination_class">pagination_class (management.access.view.AccessView attribute)</a></li>
 <li><a href="../rbac/management.access/#management.access.view.AccessView.paginator">paginator() (management.access.view.AccessView property)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Access.perm">perm (management.role.model.Access attribute)</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission">Permission (class in management.role.model)</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Access.permission">permission (management.role.model.Access attribute)</a>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission">Permission (class in management.permission.model)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.permission">permission (management.permission.model.Permission attribute)</a>
 <ul>
-<li><a href="../rbac/management.role/#management.role.model.Permission.permission">(management.role.model.Permission attribute)</a></li>
+<li><a href="../rbac/management.role/#management.role.model.Access.permission">(management.role.model.Access attribute)</a></li>
 </ul></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission.DoesNotExist">Permission.DoesNotExist</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission.MultipleObjectsReturned">Permission.MultipleObjectsReturned</a></li>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.DoesNotExist">Permission.DoesNotExist</a></li>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.MultipleObjectsReturned">Permission.MultipleObjectsReturned</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Access.permission_application">permission_application() (management.role.model.Access method)</a></li>
 <li><a href="../rbac/management.access/#management.access.view.AccessView.permission_classes">permission_classes (management.access.view.AccessView attribute)</a>
 <ul>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.permission_classes">(management.group.view.GroupViewSet attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.permission_classes">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.permission_classes">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.principal/#management.principal.view.PrincipalView.permission_classes">(management.principal.view.PrincipalView attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.permission_classes">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
 <li><a href="../rbac/management/#management.seeds.permission_seeding">permission_seeding() (in module management.seeds)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionFilter">PermissionFilter (class in management.permission.view)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.serializer.PermissionSerializer">PermissionSerializer (class in management.permission.serializer)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.serializer.PermissionSerializer.Meta">PermissionSerializer.Meta (class in management.permission.serializer)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet">PermissionViewSet (class in management.permission.view)</a></li>
 <li><a href="../rbac/management.group/#management.group.model.Group.platform_default">platform_default (management.group.model.Group attribute)</a>
 <ul>
 <li><a href="../rbac/management.role/#management.role.model.Role.platform_default">(management.role.model.Role attribute)</a></li>
@@ -900,10 +938,10 @@ title: Index
 <li><a href="../rbac/management/#management.utils.policies_for_principal">policies_for_principal() (in module management.utils)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.model.Policy">Policy (class in management.policy.model)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.model.Policy.DoesNotExist">Policy.DoesNotExist</a></li>
-<li><a href="../rbac/management.policy/#management.policy.model.Policy.MultipleObjectsReturned">Policy.MultipleObjectsReturned</a></li>
-<li><a href="../rbac/management.policy/#management.policy.model.policy_changed_cache_handler">policy_changed_cache_handler() (in module management.policy.model)</a></li>
 </ul></td>
 <td><ul>
+<li><a href="../rbac/management.policy/#management.policy.model.Policy.MultipleObjectsReturned">Policy.MultipleObjectsReturned</a></li>
+<li><a href="../rbac/management.policy/#management.policy.model.policy_changed_cache_handler">policy_changed_cache_handler() (in module management.policy.model)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.model.policy_to_roles_cache_handler">policy_to_roles_cache_handler() (in module management.policy.model)</a></li>
 <li><a href="../rbac/management.permissions/#management.permissions.policy_access.PolicyAccessPermission">PolicyAccessPermission (class in management.permissions.policy_access)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyFilter">PolicyFilter (class in management.policy.view)</a></li>
@@ -952,6 +990,7 @@ title: Index
 <td><ul>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.queryset">queryset (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.queryset">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.queryset">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.queryset">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
@@ -1014,7 +1053,7 @@ title: Index
 <li><a href="../rbac/management.group/#management.group.definer.remove_roles">remove_roles() (in module management.group.definer)</a></li>
 <li><a href="../rbac/management.principal/#management.principal.proxy.PrincipalProxy.request_filtered_principals">request_filtered_principals() (management.principal.proxy.PrincipalProxy method)</a></li>
 <li><a href="../rbac/management.principal/#management.principal.proxy.PrincipalProxy.request_principals">request_principals() (management.principal.proxy.PrincipalProxy method)</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission.resource_type">resource_type (management.role.model.Permission attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.resource_type">resource_type (management.permission.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.ResourceDefinition">ResourceDefinition (class in management.role.model)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.ResourceDefinition.DoesNotExist">ResourceDefinition.DoesNotExist</a></li>
 <li><a href="../rbac/management.role/#management.role.model.ResourceDefinition.MultipleObjectsReturned">ResourceDefinition.MultipleObjectsReturned</a></li>
@@ -1075,9 +1114,9 @@ title: Index
 <tbody>
 <tr class="odd">
 <td><ul>
-<li><a href="../rbac/management.role/#management.role.model.Access.save">save() (management.role.model.Access method)</a>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.save">save() (management.permission.model.Permission method)</a>
 <ul>
-<li><a href="../rbac/management.role/#management.role.model.Permission.save">(management.role.model.Permission method)</a></li>
+<li><a href="../rbac/management.role/#management.role.model.Access.save">(management.role.model.Access method)</a></li>
 </ul></li>
 <li><a href="../rbac/management/#management.cache.AccessCache.save_policy">save_policy() (management.cache.AccessCache method)</a></li>
 <li><a href="../rbac/management.group/#management.group.definer.seed_group">seed_group() (in module management.group.definer)</a></li>
@@ -1085,6 +1124,7 @@ title: Index
 <li><a href="../rbac/management.role/#management.role.definer.seed_roles">seed_roles() (in module management.role.definer)</a></li>
 <li><a href="../rbac/management.access/#management.access.view.AccessView.serializer_class">serializer_class (management.access.view.AccessView attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.serializer_class">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.serializer_class">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
 <li><a href="../rbac/management.group/#management.group.definer.set_system_flag_post_update">set_system_flag_post_update() (in module management.group.definer)</a></li>
@@ -1100,6 +1140,7 @@ title: Index
 <li><a href="../rbac/api.status/#api.status.serializer.StatusSerializer.Meta">StatusSerializer.Meta (class in api.status.serializer)</a></li>
 <li><a href="../rbac/management.group/#management.group.view.GroupViewSet.suffix">suffix (management.group.view.GroupViewSet attribute)</a>
 <ul>
+<li><a href="../rbac/management.permission/#management.permission.view.PermissionViewSet.suffix">(management.permission.view.PermissionViewSet attribute)</a></li>
 <li><a href="../rbac/management.policy/#management.policy.view.PolicyViewSet.suffix">(management.policy.view.PolicyViewSet attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.suffix">(management.role.view.RoleViewSet attribute)</a></li>
 </ul></li>
@@ -1192,7 +1233,7 @@ title: Index
 <td><ul>
 <li><a href="../rbac/management.role/#management.role.serializer.AccessSerializer.validate_permission">validate_permission() (management.role.serializer.AccessSerializer method)</a></li>
 <li><a href="../rbac/management/#management.utils.validate_psk">validate_psk() (in module management.utils)</a></li>
-<li><a href="../rbac/management.role/#management.role.model.Permission.verb">verb (management.role.model.Permission attribute)</a></li>
+<li><a href="../rbac/management.permission/#management.permission.model.Permission.verb">verb (management.permission.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Role.version">version (management.role.model.Role attribute)</a></li>
 </ul></td>
 </tr>

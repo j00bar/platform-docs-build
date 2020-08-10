@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:50:42.748194
+date: 2020-08-03 13:09:33
 title: rbac
 ---
 <div id="rbac" class="section">
@@ -54,6 +54,16 @@ title: rbac
                 module](../management.group/#module-management.group.view)
               - [Module
                 contents](../management.group/#module-management.group)
+          - [management.permission package](../management.permission/)
+              - [Submodules](../management.permission/#submodules)
+              - [management.permission.model
+                module](../management.permission/#module-management.permission.model)
+              - [management.permission.serializer
+                module](../management.permission/#module-management.permission.serializer)
+              - [management.permission.view
+                module](../management.permission/#module-management.permission.view)
+              - [Module
+                contents](../management.permission/#module-management.permission)
           - [management.permissions package](../management.permissions/)
               - [Submodules](../management.permissions/#submodules)
               - [management.permissions.admin\_access

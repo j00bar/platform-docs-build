@@ -1,0 +1,38 @@
+management.permission package
+=============================
+
+Submodules
+----------
+
+management.permission.model module
+----------------------------------
+
+.. automodule:: management.permission.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.permission.serializer module
+---------------------------------------
+
+.. automodule:: management.permission.serializer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+management.permission.view module
+---------------------------------
+
+.. automodule:: management.permission.view
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: management.permission
+   :members:
+   :undoc-members:
+   :show-inheritance:

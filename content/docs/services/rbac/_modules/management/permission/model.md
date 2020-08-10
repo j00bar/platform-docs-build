@@ -1,6 +1,6 @@
 ---
 date: 2020-08-03 13:09:33
-title: Source code for api.status.serializer
+title: Source code for management.permission.model
 ---
 
 <div class="highlight">
@@ -22,26 +22,24 @@ title: Source code for api.status.serializer
     # along with this program.  If not, see <https://www.gnu.org/licenses/>.
     #
     
-    """Serializer to capture server status."""
-    
-    from rest_framework import serializers
-    
-    from .model import Status
+    """Model for permission management."""
+    from django.db import models
     
     
-    [docs]class StatusSerializer(serializers.Serializer):
-        """Serializer for the Status model."""
+    [docs]class Permission(models.Model):
+        """A Permission."""
     
-        api_version = serializers.IntegerField()
-        commit = serializers.CharField()
-        modules = serializers.DictField()
-        platform_info = serializers.DictField()
-        python_version = serializers.CharField()
+        application = models.TextField(null=False)
+        resource_type = models.TextField(null=False)
+        verb = models.TextField(null=False)
+        permission = models.TextField(null=False, unique=True)
     
-    [docs]    class Meta:
-            """Metadata for the serializer."""
-    
-            model = Status
-            fields = "__all__"
+    [docs]    def save(self, *args, **kwargs):
+            """Populate the application, resource_type and verb field before saving."""
+            context = self.permission.split(":")
+            self.application = context[0]
+            self.resource_type = context[1]
+            self.verb = context[2]
+            super(Permission, self).save(*args, **kwargs)
 
 </div>

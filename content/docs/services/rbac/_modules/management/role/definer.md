@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:50:42.748194
+date: 2020-08-03 13:09:33
 title: Source code for management.role.definer
 ---
 
@@ -29,7 +29,8 @@ title: Source code for management.role.definer
     
     from django.conf import settings
     from django.db import transaction
-    from management.role.model import Access, Permission, ResourceDefinition, Role
+    from management.permission.model import Permission
+    from management.role.model import Access, ResourceDefinition, Role
     from tenant_schemas.utils import tenant_context
     
     logger = logging.getLogger(__name__)  # pylint: disable=invalid-name

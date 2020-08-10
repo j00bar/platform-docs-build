@@ -1,5 +1,5 @@
 ---
-date: 2020-07-27 13:50:42.748194
+date: 2020-08-03 13:09:33
 title: management.role package
 ---
 <div id="management-role-package" class="section">
@@ -181,71 +181,6 @@ Model for role management.
         \[source\]
         </span>](../../_modules/management/role/model/#CustomManager.get_queryset)  
         Override default get\_queryset to defer fields.
-
-<!-- end list -->
-
-  - *class* `  management.role.model.  ` `  Permission  `
-    <span class="sig-paren"> ( </span> *<span class="o"> \* </span>
-    <span class="n"> args </span>* , *<span class="o"> \*\* </span>
-    <span class="n"> kwargs </span>* <span class="sig-paren"> ) </span>
-    [<span class="viewcode-link"> \[source\]
-    </span>](../../_modules/management/role/model/#Permission)  
-    Bases: `  django.db.models.base.Model  `
-    
-    Permission for access.
-    
-      - *exception* `  DoesNotExist  `  
-        Bases: `  django.core.exceptions.ObjectDoesNotExist  `
-    
-    <!-- end list -->
-    
-      - *exception* `  MultipleObjectsReturned  `  
-        Bases: `  django.core.exceptions.MultipleObjectsReturned  `
-    
-    <!-- end list -->
-    
-      - `  application  `  
-        A wrapper for a deferred-loading field. When the value is read
-        from this object the first time, the query is executed.
-    
-    <!-- end list -->
-    
-      - `  id  `  
-        A wrapper for a deferred-loading field. When the value is read
-        from this object the first time, the query is executed.
-    
-    <!-- end list -->
-    
-      - `  objects  ` *= \<django.db.models.manager.Manager object\>*
-    
-    <!-- end list -->
-    
-      - `  permission  `  
-        A wrapper for a deferred-loading field. When the value is read
-        from this object the first time, the query is executed.
-    
-    <!-- end list -->
-    
-      - `  resource_type  `  
-        A wrapper for a deferred-loading field. When the value is read
-        from this object the first time, the query is executed.
-    
-    <!-- end list -->
-    
-      - `  save  ` <span class="sig-paren"> ( </span> *<span class="o">
-        \* </span> <span class="n"> args </span>* , *<span class="o">
-        \*\* </span> <span class="n"> kwargs </span>*
-        <span class="sig-paren"> ) </span> [<span class="viewcode-link">
-        \[source\]
-        </span>](../../_modules/management/role/model/#Permission.save)  
-        Populate the application, resource\_type and verb field before
-        saving.
-    
-    <!-- end list -->
-    
-      - `  verb  `  
-        A wrapper for a deferred-loading field. When the value is read
-        from this object the first time, the query is executed.
 
 <!-- end list -->
 
