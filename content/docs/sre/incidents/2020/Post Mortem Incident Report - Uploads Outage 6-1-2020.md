@@ -1,5 +1,5 @@
 ---
-date: 2020-06-17 12:43:41.781703
+date: 2020-07-22 08:59:29.726000
 title: Post Mortem Incident Report - Uploads Outage 6-1-2020
 ---
 ## <span dir="ltr">Overview</span>
@@ -261,7 +261,7 @@ including an apology? (The apology should be genuine, not rote.)</span>*
 
 **<span dir="ltr">Ingress load, until=0850 CDT</span>**
 
-![](media/image2.png)<span dir="ltr"></span>
+![](media/image1.png)<span dir="ltr"></span>
 
 <span dir="ltr"></span>
 
@@ -275,4 +275,4 @@ including an apology? (The apology should be genuine, not rote.)</span>*
 **<span dir="ltr">Platform engine processed count (averaged for an
 hour)</span>**
 
-![](media/image1.png)<span dir="ltr"></span>
+![](media/image2.png)<span dir="ltr"></span>

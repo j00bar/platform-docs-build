@@ -1,5 +1,5 @@
 ---
-date: 2020-06-17 12:43:40.384702
+date: 2019-04-02 09:22:35.663000
 title: 2019-03-25 - DB Sev1 Outage
 ---
 # <span dir="ltr">Overview</span>

@@ -1,5 +1,5 @@
 ---
-date: 2020-06-17 12:43:40.353702
+date: 2019-02-05 17:10:06.926000
 title: 2019-02-03 - Cert Auth Failures
 ---
 ## <span dir="ltr">Description and Timeline:</span> 

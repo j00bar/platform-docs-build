@@ -1,5 +1,5 @@
 ---
-date: 2020-06-17 12:43:40.476702
+date: 2019-05-10 18:15:55.051000
 title: 2019-05-10 - Platform HTML Akamai Outage
 ---
 # <span dir="ltr">Overview</span>

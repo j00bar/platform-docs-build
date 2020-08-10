@@ -1,5 +1,5 @@
 ---
-date: 2020-06-17 12:43:42.003703
+date: 2020-06-22 10:51:16.874000
 title: Post Mortem Incident Report - RBAC Outage  06-015-2020
 ---
 ## <span dir="ltr">Overview</span>
@@ -247,46 +247,50 @@ post, (4) any improvements to our incident response process.*</span>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td><span dir="ltr">Create Pager Duty Alerts for RBAC</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7192"><span class="underline">RHCLOUD-7192</span></a></span></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td><span dir="ltr">Create Pager Duty runbook for RBAC</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7203"><span class="underline">RHCLOUD-7203</span></a></span></td>
+</tr>
+<tr class="odd">
+<td><span dir="ltr">Run seeding and migrations concurrently by default</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7195"><span class="underline">RHCLOUD-7195</span></a></span></td>
+</tr>
+<tr class="even">
+<td><span dir="ltr">Tune RBAC rollout params to ensure we stay under quota</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7196"><span class="underline">RHCLOUD-7196</span></a></span></td>
+</tr>
+<tr class="odd">
+<td><span dir="ltr">Run RBAC migrations independent of the code/deployments</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7198"><span class="underline">RHCLOUD-7198</span></a></span></td>
+</tr>
+<tr class="even">
+<td><span dir="ltr">Manage stage of migrations and seeds for tenants</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7199"><span class="underline">RHCLOUD-7199</span></a></span></td>
+</tr>
+<tr class="odd">
+<td><span dir="ltr">Less verbose RBAC migration/seeding output</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7200">RHCLOUD-7200</a></span></td>
+</tr>
+<tr class="even">
+<td><span dir="ltr">Do not create RBAC tenant schema on GET requests</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7201"><span class="underline">RHCLOUD-7201</span></a></span></td>
+</tr>
+<tr class="odd">
+<td><span dir="ltr">Add Sentry Logging to Infrastructure Services</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7071"><span class="underline">RHCLOUD-7071</span></a></span></td>
+</tr>
+<tr class="even">
+<td><span dir="ltr">Add more metrics and alerts for health of RBAC</span></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6604"><span class="underline">RHCLOUD-6604</span></a></span></td>
 </tr>
 <tr class="odd">
 <td><span dir="ltr"></span></td>
 <td><span dir="ltr"></span></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
-</tr>
-<tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
-</tr>
-<tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
-</tr>
-<tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
-</tr>
-<tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
-</tr>
-<tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
-</tr>
-<tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
-</tr>
-<tr class="odd">
 <td><span dir="ltr"></span></td>
 <td><span dir="ltr"></span></td>
 </tr>

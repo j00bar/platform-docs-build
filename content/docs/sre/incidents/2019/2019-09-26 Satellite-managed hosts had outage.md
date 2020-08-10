@@ -1,5 +1,5 @@
 ---
-date: 2020-06-17 12:43:40.948702
+date: 2019-10-11 11:19:09.005000
 title: 2019-09-26 Satellite-managed hosts had outage
 ---
 # <span dir="ltr">Overview</span>

@@ -1,6 +1,6 @@
 ---
-date: 2020-06-17 12:43:41.889703
-title: 2020-06-06 - Kafka issue
+date: 2020-06-18 22:17:09.024000
+title: Post Mortem Incident Report - Kafka issue (06-06-2020)
 ---
 ## <span dir="ltr">Overview</span>
 
@@ -173,8 +173,6 @@ OK to not list anything.</span>*
   - > <span dir="ltr">On the Xjoin side of the problem, we were able to
     > RCA the issue, fix it and communicate back to all customers within
     > 2 hours from identification.</span>
-
-  - > <span dir="ltr"></span>
 
 ### <span dir="ltr">What didn’t go so well?</span>
 

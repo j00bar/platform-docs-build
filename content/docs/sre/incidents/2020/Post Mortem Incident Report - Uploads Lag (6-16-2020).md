@@ -1,6 +1,6 @@
 ---
-date: 2020-06-17 12:43:42.087703
-title: Post Mortem Incident Report - cloud.redhat.com Uploads Lag (6-16-2020)
+date: 2020-06-18 14:12:35.546000
+title: Post Mortem Incident Report - Uploads Lag (6-16-2020)
 ---
 ## <span dir="ltr">Overview</span>
 
@@ -89,24 +89,20 @@ tools/logs that show how the timestamp was arrived at.</span>*
 <td><span dir="ltr">Email to cloudservices-outage-list@ sent</span></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">10:56am</span></td>
+<td><span dir="ltr">10:00am</span></td>
 <td><span dir="ltr">Similarities to an outage two weeks ago identified. Research shifts to potential faulty archive</span></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">11:02am</span></td>
+<td><span dir="ltr">10:36am</span></td>
 <td><span dir="ltr">Archive with binary file /etc/redhat-release identified</span></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">11:47am</span></td>
+<td><span dir="ltr">11:35am</span></td>
 <td><span dir="ltr">Archive removed from pipeline, processing throughput increases. Errors cease.</span></td>
 </tr>
 <tr class="odd">
 <td><span dir="ltr">12:47pm</span></td>
 <td><span dir="ltr">All-clear sent to cloudservices-outage-list@ sent</span></td>
-</tr>
-<tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
 </tr>
 </tbody>
 </table>
@@ -122,15 +118,34 @@ tools/logs that show how the timestamp was arrived at.</span>*
 *<span dir="ltr">List anything you did well and want to call out. It's
 OK to not list anything.</span>*
 
-  - > <span dir="ltr"></span>
+  - > <span dir="ltr">teamwork\!</span>
+    
+      - > <span dir="ltr">Huge help from Cmitch\!</span>
+    
+      - > <span dir="ltr">Joint effort between Kafka and Ingress to
+        > understand handoff between systems</span>
 
-  - > <span dir="ltr"></span>
+  - > <span dir="ltr">Felt supported by management and team</span>
 
 ### <span dir="ltr">What didn’t go so well?</span>
 
-<span dir="ltr">*List anything you think we didn't do very well. The
+*<span dir="ltr">List anything you think we didn't do very well. The
 intent is that we should follow up on all points here to improve our
-processes.*</span>
+processes.</span>*
+
+  - > <span dir="ltr">Escalation path unclear for on-call
+    > engineer</span>
+    
+      - > <span dir="ltr">Delay between alert and action being
+        > taken</span>
+
+  - > <span dir="ltr">Insights-engine and puptoo not committing failed
+    > messages</span>
+    
+      - > <span dir="ltr">Cause messages to continue to be
+        > reprocessed</span>
+    
+      - > <span dir="ltr">PRs in place to fix</span>
 
 > <span dir="ltr"></span>
 
@@ -158,16 +173,28 @@ post, (4) any improvements to our incident response process.*</span>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td><span dir="ltr">Need backup for CMitch regarding Kafka operation</span></td>
+<td><span dir="ltr">TODO:</span> <span dir="ltr">CMitch &amp; LD</span></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td><p><span dir="ltr">Add link to Kafka section of docs to alert runbook</span></p>
+<p><span dir="ltr"></span></p></td>
+<td><span dir="ltr"><a href="https://gitlab.cee.redhat.com/insights-platform/platform-docs/-/merge_requests/80"><span class="underline">Platform-docs PR</span></a></span></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td><p><span dir="ltr">Add context to Slack text for PlatformKafkaLagMaxExceededHard alert</span></p>
+<ul>
+<li><blockquote>
+<p><span dir="ltr">Group</span></p>
+</blockquote></li>
+<li><blockquote>
+<p><span dir="ltr">Current count at alert time</span></p>
+</blockquote></li>
+<li><blockquote>
+<p><span dir="ltr">Link to SOP (<a href="https://platform-docs.cloud.paas.psi.redhat.com/sop/PlatformKafkaLagMaxExceededHard.html"><span class="underline">https://platform-docs.cloud.paas.psi.redhat.com/sop/PlatformKafkaLagMaxExceededHard.html</span></a>)</span></p>
+</blockquote></li>
+</ul></td>
+<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-7049"><span class="underline">RHCLOUD-7049</span></a></span></td>
 </tr>
 <tr class="even">
 <td><span dir="ltr"></span></td>

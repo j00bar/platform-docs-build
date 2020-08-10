@@ -1,5 +1,5 @@
 ---
-date: 2020-06-17 12:43:40.429702
+date: 2019-05-06 10:26:24.885000
 title: 2019-05-04 - Insights Classic Upload Outage
 ---
 # <span dir="ltr">Overview</span>
