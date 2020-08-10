@@ -261,7 +261,7 @@ including an apology? (The apology should be genuine, not rote.)</span>*
 
 **<span dir="ltr">Ingress load, until=0850 CDT</span>**
 
-![](media/image1.png)<span dir="ltr"></span>
+![](media/image2.png)<span dir="ltr"></span>
 
 <span dir="ltr"></span>
 
@@ -275,4 +275,4 @@ including an apology? (The apology should be genuine, not rote.)</span>*
 **<span dir="ltr">Platform engine processed count (averaged for an
 hour)</span>**
 
-![](media/image2.png)<span dir="ltr"></span>
+![](media/image1.png)<span dir="ltr"></span>

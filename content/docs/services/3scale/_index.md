@@ -1,5 +1,5 @@
 ---
-date: 2020-08-10 15:44:36.494223
+date: 2019-10-02 16:04:47
 title: 3Scale API Gateway
 weight: 0
 ---
