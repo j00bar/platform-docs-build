@@ -8,7 +8,9 @@ RUN yum install -y git nodejs unzip nginx && \
     chmod -R g+rwX /app && \
     cd /app/platform-docs && \
     mkdir -p themes && \
-    git submodule update --init --recursive && \
+    cd themes && \
+    git clone --recurse-submodules https://github.com/google/docsy && \
+    cd /app/platform-docs && \    
     npm install -D --save autoprefixer postcss-cli && \
     hugo && \
     cp /app/platform-docs/nginx.conf /etc/nginx/nginx.conf && \
