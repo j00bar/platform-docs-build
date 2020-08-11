@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for django.db.models.query\_utils
 ---
-
-<div class="highlight">
 
     """
     Various data structures used in query construction.
@@ -341,5 +339,3 @@ title: Source code for django.db.models.query\_utils
             query = compiler.query
             where = query.build_filtered_relation_q(self.condition, reuse=set(self.path))
             return compiler.compile(where)
-
-</div>

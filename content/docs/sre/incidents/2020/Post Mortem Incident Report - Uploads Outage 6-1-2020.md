@@ -1,278 +1,226 @@
 ---
-date: 2020-07-22 08:59:29.726000
+date: 2020-07-22 12:59:29.726000
 title: Post Mortem Incident Report - Uploads Outage 6-1-2020
 ---
-## <span dir="ltr">Overview</span>
+## Overview
 
-<span dir="ltr">During the weekend of May 30, uploads stopped being
-processed. The issue appears to be with insights-engine and a large
-queue of archived to be processed</span>
+During the weekend of May 30, uploads stopped being processed. The issue
+appears to be with insights-engine and a large queue of archived to be
+processed
 
-## <span dir="ltr">What Happened</span>
+## What Happened
 
-<span dir="ltr">There was a 1 million+ item backlog in the ‘engine-work’
-RabbitMQ queue. After bouncing the insights-plugins-amqp deployment all
-pod logs had a KeyError for S3 because the corresponding archives were
-not in the bucket. This was causing insights-engine pods to crash loop
-and no longer process new archives. Purging the queue allowed
-insights-engine pods to come up and begin processing successfully
-again.</span>
+There was a 1 million+ item backlog in the ‘engine-work’ RabbitMQ queue.
+After bouncing the insights-plugins-amqp deployment all pod logs had a
+KeyError for S3 because the corresponding archives were not in the
+bucket. This was causing insights-engine pods to crash loop and no
+longer process new archives. Purging the queue allowed insights-engine
+pods to come up and begin processing successfully again.
 
-## <span dir="ltr">Contributing Factors</span>
+## Contributing Factors
 
-<span dir="ltr">Over the last few weeks, the insights-engine Kafka alert
-has triggered. The alert was silenced while work is being done to update
-the alert. It is possible that this alert would have identified the
-engine issue if it were enabled. (TODO: Confirm this?)</span>
+Over the last few weeks, the insights-engine Kafka alert has triggered.
+The alert was silenced while work is being done to update the alert. It
+is possible that this alert would have identified the engine issue if it
+were enabled. (TODO: Confirm this?)
 
-<span dir="ltr"></span>
+## Resolution
 
-## <span dir="ltr">Resolution</span>
+The resolution on 6/1 was to purge the rabbitmq queue. This caused
+uploads to begin processing again and insights-engine worked through the
+remaining queue.
 
-<span dir="ltr">The resolution on 6/1 was to purge the rabbitmq queue.
-This caused uploads to begin processing again and insights-engine worked
-through the remaining queue.</span>
+The root cause was identified as being an uncaught exception in
+insights-core. This allowed bad messages to be continually reprocessed
+until we hit a situation where the pods were only processing the bad
+messages and falling into repeated crash loops.
 
-<span dir="ltr"></span>
+Dan Kuc identified and resolved the issue in this
+[PR](https://github.com/RedHatInsights/insights-core-frontends/pull/27).
 
-<span dir="ltr">The root cause was identified as being an uncaught
-exception in insights-core. This allowed bad messages to be continually
-reprocessed until we hit a situation where the pods were only processing
-the bad messages and falling into repeated crash loops.</span>
+## Impact
 
-<span dir="ltr"></span>
-
-<span dir="ltr">Dan Kuc identified and resolved the issue in this
-[<span class="underline">PR</span>](https://github.com/RedHatInsights/insights-core-frontends/pull/27).</span>
-
-## <span dir="ltr">Impact</span>
-
-<span dir="ltr">Uploads from Satellite customers were not processed
-during the outage time. The data for these customers will be included in
-the next upload.</span>
-
-<span dir="ltr"></span>
+Uploads from Satellite customers were not processed during the outage
+time. The data for these customers will be included in the next upload.
 
 <table>
-<thead>
-<tr class="header">
-<th><span dir="ltr"></span></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">BZ filed (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1842448"><span class="underline">here</span></a>)</span></td>
-<td><span dir="ltr">2 days</span></td>
+<td>BZ filed (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1842448"><span class="underline">here</span></a>)</td>
+<td>2 days</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">Satellite users not able to see their data in UI</span></td>
-<td><span dir="ltr">2 days</span></td>
+<td>Satellite users not able to see their data in UI</td>
+<td>2 days</td>
 </tr>
 </tbody>
 </table>
 
-<span dir="ltr"></span>
+## Timeline
 
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">Timeline</span>
-
-*<span dir="ltr">Some important times to include: (1) time the
-contributing factor began, (2) time of the page, (3) time that the
-status page was updated (i.e. when the incident became public), (4) time
-of any significant actions, (5) time the SEV-2/1 ended, (6) links to
-tools/logs that show how the timestamp was arrived at.</span>*
-
-<span dir="ltr"></span>
+*Some important times to include: (1) time the contributing factor
+began, (2) time of the page, (3) time that the status page was updated
+(i.e. when the incident became public), (4) time of any significant
+actions, (5) time the SEV-2/1 ended, (6) links to tools/logs that show
+how the timestamp was arrived at.*
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Time (EST)</span></strong></th>
-<th><strong><span dir="ltr">Notes</span></strong></th>
+<th><strong>Time (EST)</strong></th>
+<th><strong>Notes</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">6/1 5:24am</span></td>
-<td><span dir="ltr">BZ filed (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1842448"><span class="underline">here</span></a>)</span></td>
+<td>6/1 5:24am</td>
+<td>BZ filed (<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1842448"><span class="underline">here</span></a>)</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">5:37am</span></td>
-<td><span dir="ltr">Discussion in Slack about uploads failing (<a href="https://ansible.slack.com/archives/CGYK5EZ37/p1591004262352700"><span class="underline">here</span></a>)</span></td>
+<td>5:37am</td>
+<td>Discussion in Slack about uploads failing (<a href="https://ansible.slack.com/archives/CGYK5EZ37/p1591004262352700"><span class="underline">here</span></a>)</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">5:51am</span></td>
-<td><span dir="ltr">Pete Savage triggers on-call page</span></td>
+<td>5:51am</td>
+<td>Pete Savage triggers on-call page</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">5:57am</span></td>
-<td><span dir="ltr">Kyle Lape acknowledges page, begins investigating</span></td>
+<td>5:57am</td>
+<td>Kyle Lape acknowledges page, begins investigating</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">7:00am</span></td>
-<td><span dir="ltr">Kyle clears RabbitMQ queue</span></td>
+<td>7:00am</td>
+<td>Kyle clears RabbitMQ queue</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">7:09am</span></td>
-<td><span dir="ltr">Kyle confirms uploads are running again</span></td>
+<td>7:09am</td>
+<td>Kyle confirms uploads are running again</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">1:39pm</span></td>
-<td><span dir="ltr">Dan Kub submits PR to resolve uncaught exception (<a href="https://github.com/RedHatInsights/insights-core-frontends/pull/27"><span class="underline">here</span></a>)</span></td>
+<td>1:39pm</td>
+<td>Dan Kub submits PR to resolve uncaught exception (<a href="https://github.com/RedHatInsights/insights-core-frontends/pull/27"><span class="underline">here</span></a>)</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-<span dir="ltr"></span>
+## How’d We Do?
 
-<span dir="ltr"></span>
+### What went well?
 
-## <span dir="ltr">How’d We Do?</span>
+*List anything you did well and want to call out. It's OK to not list
+anything.*
 
-### <span dir="ltr">What went well?</span>
+  - > Cross-team effort to resolve the issue on the morning of 6/1
 
-*<span dir="ltr">List anything you did well and want to call out. It's
-OK to not list anything.</span>*
+  - 
+### What didn’t go so well?
 
-  - > <span dir="ltr">Cross-team effort to resolve the issue on the
-    > morning of 6/1</span>
-
-  - > <span dir="ltr"></span>
-
-### <span dir="ltr">What didn’t go so well?</span>
-
-  - > <span dir="ltr">It looks like the upload failure started on 5/30,
-    > but a page was not triggered until the manual alert on 6/1</span>
+  - > It looks like the upload failure started on 5/30, but a page was
+    > not triggered until the manual alert on 6/1
     
-      - > <span dir="ltr">Where are we missing an alert? What is the
-        > alert criteria?</span>
+      - > Where are we missing an alert? What is the alert criteria?
 
-  - > <span dir="ltr">Black box tester SSH key was unavailable to on
-    > call engineer (kyle)</span>
+  - > Black box tester SSH key was unavailable to on call engineer
+    > (kyle)
     
-      - > <span dir="ltr">The private ssh key was linked in an SOP but
-        > Kyle was unaware of the SOP</span>
+      - > The private ssh key was linked in an SOP but Kyle was unaware
+        > of the SOP
 
-  - > <span dir="ltr"></span>
+  - 
+## Action Items
 
-> <span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">Action Items</span>
-
-<span dir="ltr">*Each action item should be in the form of a JIRA
-ticket, and each ticket should have the same set of two tags:
-“sev1\_YYYYMMDD” (such as sev1\_20150911) and simply “sev1”. Include
-action items such as: (1) any fixes required to prevent the contributing
-factor in the future, (2) any preparedness tasks that could help
-mitigate the problem if it came up again, (3) remaining post-mortem
-steps, such as the internal email, as well as the status-page public
-post, (4) any improvements to our incident response process.*</span>
-
-<span dir="ltr"></span>
+*Each action item should be in the form of a JIRA ticket, and each
+ticket should have the same set of two tags: “sev1\_YYYYMMDD” (such as
+sev1\_20150911) and simply “sev1”. Include action items such as: (1) any
+fixes required to prevent the contributing factor in the future, (2) any
+preparedness tasks that could help mitigate the problem if it came up
+again, (3) remaining post-mortem steps, such as the internal email, as
+well as the status-page public post, (4) any improvements to our
+incident response process.*
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Action Item</span></strong></th>
-<th><strong><span dir="ltr">Status</span></strong></th>
+<th><strong>Action Item</strong></th>
+<th><strong>Status</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">Ensure black box is running again</span></td>
-<td><span dir="ltr">DONE - fixed before ticket was filed</span></td>
+<td>Ensure black box is running again</td>
+<td>DONE - fixed before ticket was filed</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">Write alert to check if black box tester is running</span></td>
-<td><span dir="ltr">DONE- <a href="https://projects.engineering.redhat.com/browse/RHIOPS-783"><span class="underline">RHIOPS-783</span></a></span></td>
+<td>Write alert to check if black box tester is running</td>
+<td>DONE- <a href="https://projects.engineering.redhat.com/browse/RHIOPS-783"><span class="underline">RHIOPS-783</span></a></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">Enable metrics for insights classic</span></td>
-<td><span dir="ltr">Advisor team</span></td>
+<td>Enable metrics for insights classic</td>
+<td>Advisor team</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">Add alert for rabbitmq engine_work queue size</span></td>
-<td><p><span dir="ltr">Advisor team</span></p>
-<p><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6760"><span class="underline">Jira ticket</span></a></span></p></td>
+<td>Add alert for rabbitmq engine_work queue size</td>
+<td><p>Advisor team</p>
+<p><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6760"><span class="underline">Jira ticket</span></a></p></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">Create SOP for Classic API and engine</span></td>
-<td><p><span dir="ltr">Advisor team</span></p>
-<p><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6762"><span class="underline">Jira Ticket</span></a></span></p></td>
+<td>Create SOP for Classic API and engine</td>
+<td><p>Advisor team</p>
+<p><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6762"><span class="underline">Jira Ticket</span></a></p></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">Reach out to Shannon Hughes to let him know the outage</span></td>
-<td><span dir="ltr">DONE - messaged via Slack</span></td>
+<td>Reach out to Shannon Hughes to let him know the outage</td>
+<td>DONE - messaged via Slack</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-<span dir="ltr"></span>
+## Messaging
 
-## <span dir="ltr">Messaging</span>
+### Internal Email
 
-### <span dir="ltr">Internal Email</span>
+*This is a follow-up for employees. It should be sent out right after
+the post-mortem meeting is over. It only needs a short paragraph
+summarizing the incident and a link to this wiki page.*
 
-*<span dir="ltr">This is a follow-up for employees. It should be sent
-out right after the post-mortem meeting is over. It only needs a short
-paragraph summarizing the incident and a link to this wiki page.</span>*
+### External Email
 
-<span dir="ltr"></span>
+*This is what will be included on the status.redhat.com website
+regarding this incident. What are we telling customers, including an
+apology? (The apology should be genuine, not rote.)*
 
-<span dir="ltr"></span>
+**Ingress load, until=0850 CDT**
 
-### <span dir="ltr">External Email</span>
+![](media/image3.png)
 
-*<span dir="ltr">This is what will be included on the status.redhat.com
-website regarding this incident. What are we telling customers,
-including an apology? (The apology should be genuine, not rote.)</span>*
+**Kafka messsage production over the past 7 days, until 0906 CDT**
 
-<span dir="ltr"></span>
+![](media/image2.png)
 
-**<span dir="ltr">Ingress load, until=0850 CDT</span>**
+**Platform engine processed count (averaged for an hour)**
 
-![](media/image1.png)<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-**<span dir="ltr">Kafka messsage production over the past 7 days, until
-0906 CDT</span>**
-
-![](media/image3.png)<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-**<span dir="ltr">Platform engine processed count (averaged for an
-hour)</span>**
-
-![](media/image2.png)<span dir="ltr"></span>
+![](media/image1.png)

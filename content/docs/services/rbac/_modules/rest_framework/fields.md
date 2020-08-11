@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for rest\_framework.fields
 ---
-
-<div class="highlight">
 
     import copy
     import datetime
@@ -1950,5 +1948,3 @@ title: Source code for rest\_framework.fields
             if is_protected_type(value):
                 return value
             return self.model_field.value_to_string(obj)
-
-</div>

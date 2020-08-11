@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for django.db.models.manager
 ---
-
-<div class="highlight">
 
     import copy
     import inspect
@@ -206,5 +204,3 @@ title: Source code for django.db.models.manager
     
         def get_queryset(self):
             return super().get_queryset().none()
-
-</div>

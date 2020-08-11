@@ -1,113 +1,80 @@
 ---
-date: 2019-02-05 17:10:06.926000
+date: 2019-02-05 22:10:06.926000
 title: 2019-02-03 - Cert Auth Failures
 ---
-## <span dir="ltr">Description and Timeline:</span> 
+## Description and Timeline: 
 
-<span dir="ltr"></span>
+**February 3 2019:**
 
-**<span dir="ltr">February 3 2019:</span>**
+From Amar Huchchanavar email to insights-prio:
 
-<span dir="ltr"></span>
+*Hello Team,*
 
-<span dir="ltr">From Amar Huchchanavar email to insights-prio:  
-</span>
+***Data Center Network Maintenance:***
+***https://status.redhat.com/incidents/y9f22rtpr2tf***
 
-*<span dir="ltr">Hello Team,</span>*
+*It appears that insights upload URL(
+<https://cert-api.access.redhat.com/r/insights/uploads/>) is rejecting(
+401 Unauthorized) traffic though the system has valid RHSM registration
+data.*
 
-<span dir="ltr"></span>
+*\[Direct, Satellite6, Satellite5 all products are affected \]*
 
-***<span dir="ltr">Data Center Network Maintenance:</span>***
-***<span dir="ltr"><span class="underline">https://status.redhat.com/incidents/y9f22rtpr2tf</span></span>***
+*~~~~*
 
-<span dir="ltr"></span>
+*2019-02-03 10:30:17,023 INFO insights.client.connection === Begin
+Upload URL Connection Test ===expected type range vector in call to
+function "sum\_over\_time"*
 
-*<span dir="ltr">It appears that insights upload URL(
-[<span class="underline">https://cert-api.access.redhat.com/r/insights/uploads/</span>](https://cert-api.access.redhat.com/r/insights/uploads/))
-is rejecting( 401 Unauthorized) traffic though the system has valid RHSM
-registration data.</span>*
+*2019-02-03 10:30:17,023 DEBUG insights.client.connection Testing:*
+*https://cert-api.access.redhat.com/r/insights/uploads/*
 
-*<span dir="ltr">\[Direct, Satellite6, Satellite5 all products are
-affected \]</span>*
+*2019-02-03 10:30:22,289 INFO insights.client.connection HTTP Status
+Code: 401*
 
-<span dir="ltr"></span>
+*2019-02-03 10:30:22,289 INFO insights.client.connection HTTP Status
+Text: Unauthorized*
 
-*<span dir="ltr">\~\~\~\~</span>*
+*2019-02-03 10:30:22,289 INFO insights.client.connection HTTP Response
+Text: *
 
-*<span dir="ltr">2019-02-03 10:30:17,023 INFO insights.client.connection
-=== Begin Upload URL Connection Test ===expected type range vector in
-call to function "sum\_over\_time"</span>*
+*2019-02-03 10:30:22,289 INFO insights.client.connection Connection
+failed*
 
-*<span dir="ltr">2019-02-03 10:30:17,023 DEBUG
-insights.client.connection Testing:
-<span class="underline">https://cert-api.access.redhat.com/r/insights/uploads/</span></span>*
+*2019-02-03 10:30:22,290 INFO insights.client.connection === End Upload
+URL Connection Test: FAILURE ===*
 
-*<span dir="ltr">2019-02-03 10:30:22,289 INFO insights.client.connection
-HTTP Status Code: 401</span>*
+*~~~~*
 
-*<span dir="ltr">2019-02-03 10:30:22,289 INFO insights.client.connection
-HTTP Status Text: Unauthorized</span>*
+*https://status.redhat.com/ *
 
-*<span dir="ltr">2019-02-03 10:30:22,289 INFO insights.client.connection
-HTTP Response Text:</span>*
+*Insights Frontend Stable Operational*
 
-*<span dir="ltr">2019-02-03 10:30:22,289 INFO insights.client.connection
-Connection failed</span>*
+*Insights API Operational*
 
-*<span dir="ltr">2019-02-03 10:30:22,290 INFO insights.client.connection
-=== End Upload URL Connection Test: FAILURE ===</span>*
+Resulted in bugs being opened:
+<https://bugzilla.redhat.com/show_bug.cgi?id=1672137>
 
-*<span dir="ltr">\~\~\~\~</span>*
+“Looks like we are unable to use
+<https://webadmin.corp.redhat.com/subscription-admin/rest/findOwner> to
+map certificate CN to accounts ( getting connect reset errrors).”
 
-<span dir="ltr"></span>
+**February 4, 2019**
 
-*<span dir="ltr"><span class="underline">https://status.redhat.com/</span></span>*
+Lindani: Issues occurred over the weekend due to the PHX2 network
+maintenance.
 
-*<span dir="ltr">Insights Frontend Stable Operational</span>*
+https://access.redhat.com/documentation/en-us/red\_hat\_enterprise\_linux/5/html/global\_file\_system/s1-manage-direct-io
 
-*<span dir="ltr">Insights API Operational</span>*
+## Response:
 
-<span dir="ltr"></span>
+A test was created a while back for an ugly cert-auth security bug that
+may be useful in detecting simple failures such as this one. Currently a
+ticket exists in the SRE backlog here for its implementation:
+<https://projects.engineering.redhat.com/browse/RHINSIGHTS-184>
 
-<span dir="ltr">Resulted in bugs being opened:
-[<span class="underline">https://bugzilla.redhat.com/show\_bug.cgi?id=1672137</span>](https://bugzilla.redhat.com/show_bug.cgi?id=1672137)</span>
+Ian’s cert-auth test is here:
+<https://github.com/RedHatInsights/cert-test>
 
-<span dir="ltr">“Looks like we are unable to use
-[<span class="underline">https://webadmin.corp.redhat.com/subscription-admin/rest/findOwner</span>](https://webadmin.corp.redhat.com/subscription-admin/rest/findOwner)
-to map certificate CN to accounts ( getting connect reset
-errrors).”</span>
-
-<span dir="ltr"></span>
-
-**<span dir="ltr">February 4, 2019</span>**
-
-<span dir="ltr">Lindani: Issues occurred over the weekend due to the
-PHX2 network maintenance.</span>
-
-<span dir="ltr">https://access.redhat.com/documentation/en-us/red\_hat\_enterprise\_linux/5/html/global\_file\_system/s1-manage-direct-io</span>
-
-## <span dir="ltr">Response:</span>
-
-<span dir="ltr">A test was created a while back for an ugly cert-auth
-security bug that may be useful in detecting simple failures such as
-this one. Currently a ticket exists in the SRE backlog here for its
-implementation:
-[<span class="underline">https://projects.engineering.redhat.com/browse/RHINSIGHTS-184</span>](https://projects.engineering.redhat.com/browse/RHINSIGHTS-184)</span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr">Ian’s cert-auth test is here:
-[<span class="underline">https://github.com/RedHatInsights/cert-test</span>](https://github.com/RedHatInsights/cert-test)</span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr">We’ll try to include this with the other existing tests
-that QE is implementing.</span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
+We’ll try to include this with the other existing tests that QE is
+implementing.

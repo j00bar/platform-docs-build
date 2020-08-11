@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.group.view
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -645,5 +643,3 @@ title: Source code for management.group.view
             # Exclude the roles in the group
             roles_for_group = group.roles().values("uuid")
             return roles.exclude(uuid__in=roles_for_group)
-
-</div>

@@ -1,11 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: rbac
 ---
-<div id="rbac" class="section">
-
-
-<div class="toctree-wrapper compound">
 
   - [api package](../api/)
       - [Subpackages](../api/#subpackages)
@@ -150,7 +146,3 @@ title: rbac
       - [rbac.urls module](../rbac/#module-rbac.urls)
       - [rbac.wsgi module](../rbac/#module-rbac.wsgi)
       - [Module contents](../rbac/#module-rbac)
-
-</div>
-
-</div>

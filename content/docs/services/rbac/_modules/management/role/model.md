@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.role.model
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -127,5 +125,3 @@ title: Source code for management.role.model
         signals.post_save.connect(role_related_obj_change_cache_handler, sender=Role)
         signals.post_save.connect(role_related_obj_change_cache_handler, sender=Access)
         signals.post_save.connect(role_related_obj_change_cache_handler, sender=ResourceDefinition)
-
-</div>

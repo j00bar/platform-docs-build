@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for django.db.models.fields.related\_descriptors
 ---
-
-<div class="highlight">
 
     """
     Accessors for related objects.
@@ -1142,5 +1140,3 @@ title: Source code for django.db.models.fields.related\_descriptors
                     )
     
         return ManyRelatedManager
-
-</div>

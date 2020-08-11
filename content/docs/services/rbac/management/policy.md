@@ -1,14 +1,10 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Managing Policies
 ---
-<div id="managing-policies" class="section">
-
 
 A policy creates the relationship between a group (and the users in the
 group) and a set of roles.
-
-<div id="permissions-for-policy-api-access" class="section">
 
 ## Permissions for Policy API access
 
@@ -16,10 +12,6 @@ A user can be given access to view (read) policies or create/update
 (write) policies. Below are the valid permissions for reading or writing
 policies. Write permissions implies read permission.
 
-Read policy - `  rbac:policy:read  `
+Read policy - ` rbac:policy:read `
 
-Write policy - `  rbac:policy:write  `
-
-</div>
-
-</div>
+Write policy - ` rbac:policy:write `

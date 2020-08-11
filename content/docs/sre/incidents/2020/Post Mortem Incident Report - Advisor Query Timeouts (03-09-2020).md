@@ -1,210 +1,169 @@
 ---
-date: 2020-06-17 15:10:19.627000
+date: 2020-06-17 19:10:19.627000
 title: Post Mortem Incident Report - Advisor Query Timeouts (03-09-2020)
 ---
-## <span dir="ltr">Overview</span>
+## Overview
 
-<span dir="ltr">On Monday the 9th we began receiving reports that
-Insights was displaying 504 errors</span>
+On Monday the 9th we began receiving reports that Insights was
+displaying 504 errors
 
-<span dir="ltr"></span>
+## What Happened
 
-## <span dir="ltr">What Happened</span>
+Over the weekend the advisor culling routine marked a million systems as
+stale. This caused the API queries to time out as they tried to handle
+filtering them out. An update was pushed changing the queries and
+brought production back up.
 
-<span dir="ltr">Over the weekend the advisor culling routine marked a
-million systems as stale. This caused the API queries to time out as
-they tried to handle filtering them out. An update was pushed changing
-the queries and brought production back up.</span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">Timeline</span>
+## Timeline
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Time (EST)</span></strong></th>
-<th><strong><span dir="ltr">Notes</span></strong></th>
+<th><strong>Time (EST)</strong></th>
+<th><strong>Notes</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">7:06am</span></td>
-<td><span dir="ltr">Amar asks via Wormhole about the 504 errors he’s seeing</span></td>
+<td>7:06am</td>
+<td>Amar asks via Wormhole about the 504 errors he’s seeing</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">8am</span></td>
-<td><span dir="ltr">Mark Huth begins investigating the logs</span></td>
+<td>8am</td>
+<td>Mark Huth begins investigating the logs</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">8:55am</span></td>
-<td><span dir="ltr">Dan Kuc reboots the DB but problem persists</span></td>
+<td>8:55am</td>
+<td>Dan Kuc reboots the DB but problem persists</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">9:30am</span></td>
-<td><span dir="ltr">Dan identifies the cause - API queries are timing out due to the sudden marking of stale systems over the weekend. Begins working on a code workaround</span></td>
+<td>9:30am</td>
+<td>Dan identifies the cause - API queries are timing out due to the sudden marking of stale systems over the weekend. Begins working on a code workaround</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">9:50am</span></td>
-<td><span dir="ltr">Code is pushed to github and pushed through to Prod with the help of Bran</span></td>
+<td>9:50am</td>
+<td>Code is pushed to github and pushed through to Prod with the help of Bran</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">10:00am</span></td>
-<td><span dir="ltr">Build begins</span></td>
+<td>10:00am</td>
+<td>Build begins</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">10:05am</span></td>
-<td><span dir="ltr">Patch successfully alleviates the 504 errors</span></td>
+<td>10:05am</td>
+<td>Patch successfully alleviates the 504 errors</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-<span dir="ltr"></span>
+## Resolution
 
-## <span dir="ltr">Resolution</span>
+A patch was pushed to production that fixed the problem:
+<https://github.com/RedHatInsights/insights-advisor-api/pull/480>
 
-<span dir="ltr">A patch was pushed to production that fixed the problem:
-[<span class="underline">https://github.com/RedHatInsights/insights-advisor-api/pull/480</span>](https://github.com/RedHatInsights/insights-advisor-api/pull/480)</span>
+## Root Causes
 
-<span dir="ltr"></span>
+The queries made in the API could not filter the sudden appearance of a
+million stale systems.
 
-<span dir="ltr"></span>
+## Impact
 
-## <span dir="ltr">Root Causes</span>
+Insights was unusable as the /rules and /stats endpoints returned 504
+errors. We received multiple queries regarding the outage from customers
+via Support.
 
-<span dir="ltr">The queries made in the API could not filter the sudden
-appearance of a million stale systems.</span>
+BZ: <https://bugzilla.redhat.com/show_bug.cgi?id=1811665>
 
-<span dir="ltr"></span>
+## What went well?
 
-## <span dir="ltr">Impact</span>
+*List anything you think we did well and want to call out. It's okay to
+not list anything.*
 
-<span dir="ltr">Insights was unusable as the /rules and /stats endpoints
-returned 504 errors. We received multiple queries regarding the outage
-from customers via Support.</span>
+  - > We were able to force a patch through production quickly once the
+    > problem was identified.
 
-<span dir="ltr"></span>
+  - 
+## What didn’t go so well?
 
-<span dir="ltr">BZ:
-[<span class="underline">https://bugzilla.redhat.com/show\_bug.cgi?id=1811665</span>](https://bugzilla.redhat.com/show_bug.cgi?id=1811665)</span>
+*List anything you think we didn't do very well. The intent is that we
+should follow up on all points here to improve our processes.*
 
-<span dir="ltr"></span>
+  - > I believe there were black-box tests in place to catch this kind
+    > of outage but no notifications were made. Testing needs to be
+    > added or modified to catch this sort of outage.
 
-<span dir="ltr"></span>
+  - 
+## Action Items
 
-## <span dir="ltr">What went well?</span>
+*Include action items such as: *
 
-*<span dir="ltr">List anything you think we did well and want to call
-out. It's okay to not list anything.</span>*
+*(1) fixes required to prevent the issue in the future, *
 
-  - > <span dir="ltr">We were able to force a patch through production
-    > quickly once the problem was identified.</span>
+*(2) preparedness tasks that could help mitigate a similar incident if
+it came up again, *
 
-  - > <span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">What didn’t go so well?</span>
-
-*<span dir="ltr">List anything you think we didn't do very well. The
-intent is that we should follow up on all points here to improve our
-processes.</span>*
-
-  - > <span dir="ltr">I believe there were black-box tests in place to
-    > catch this kind of outage but no notifications were made. Testing
-    > needs to be added or modified to catch this sort of outage.</span>
-
-  - > <span dir="ltr"></span>
-
-> <span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">Action Items</span>
-
-*<span dir="ltr">Include action items such as:</span>*
-
-*<span dir="ltr">(1) fixes required to prevent the issue in the
-future,</span>*
-
-*<span dir="ltr">(2) preparedness tasks that could help mitigate a
-similar incident if it came up again,</span>*
-
-*<span dir="ltr">(3) remaining postmortem steps, such as an internal
-follow-up email, updating the public status page, etc</span>*
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
+*(3) remaining postmortem steps, such as an internal follow-up email,
+updating the public status page, etc*
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Action Item</span></strong></th>
-<th><strong><span dir="ltr">Status</span></strong></th>
+<th><strong>Action Item</strong></th>
+<th><strong>Status</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">Add/update black-box testing as needed: <a href="https://projects.engineering.redhat.com/browse/RHCLOUD-5026"><span class="underline">https://projects.engineering.redhat.com/browse/RHCLOUD-5026</span></a></span></td>
-<td><span dir="ltr">Pulled into Sprint 11</span></td>
+<td>Add/update black-box testing as needed: <a href="https://projects.engineering.redhat.com/browse/RHCLOUD-5026"><span class="underline">https://projects.engineering.redhat.com/browse/RHCLOUD-5026</span></a></td>
+<td>Pulled into Sprint 11</td>
 </tr>
 <tr class="even">
-<td><p><span dir="ltr">Update queries to handle large amounts of stale systems:</span></p>
-<p><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-5027"><span class="underline">https://projects.engineering.redhat.com/browse/RHCLOUD-5027</span></a></span></p></td>
-<td><span dir="ltr">Pulled into Sprint 11</span></td>
+<td><p>Update queries to handle large amounts of stale systems:</p>
+<p><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-5027"><span class="underline">https://projects.engineering.redhat.com/browse/RHCLOUD-5027</span></a></p></td>
+<td>Pulled into Sprint 11</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>

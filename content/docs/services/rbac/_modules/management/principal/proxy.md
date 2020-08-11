@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.principal.proxy
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -209,5 +207,3 @@ title: Source code for management.principal.proxy
             return self._request_principals(
                 url, account=account, account_filter=account_filter, method=requests.post, params=params, data=payload
             )
-
-</div>

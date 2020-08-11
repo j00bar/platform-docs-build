@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.principal.cleaner
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -82,5 +80,3 @@ title: Source code for management.principal.cleaner
                 logger.info("Running principal clean up for tenant %s.", tenant.schema_name)
                 clean_tenant_principals(tenant)
                 logger.info("Completed principal clean up for tenant %s.", tenant.schema_name)
-
-</div>

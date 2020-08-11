@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.cache
 ---
-
-<div class="highlight">
 
     """Redis-based caching of per-Principal per-app access policy."""
     
@@ -100,5 +98,3 @@ title: Source code for management.cache
                     pipe.reset()
                 except:  # noqa: E722
                     pass
-
-</div>

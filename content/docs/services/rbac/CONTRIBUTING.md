@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Contributing to insights-rbac
 ---
-<div id="contributing-to-insights-rbac" class="section">
-
 
 Thank you for your interest in contributing to this project\!
 
@@ -14,8 +12,6 @@ suggest changes to this document in a pull-request.
 This document uses [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt/)
 keywords to indicate requirement levels.
 
-<div id="reporting-bugs-requesting-features" class="section">
-
 ## Reporting Bugs & Requesting Features
 
 We use Github Issues to track bug reports and feature requests.
@@ -23,10 +19,6 @@ We use Github Issues to track bug reports and feature requests.
 When submitting a bug report, please be as detailed as possible. Include
 as much of these items as you have:
 
-> 
-> 
-> <div>
-> 
 > 1.  steps to reproduce the bug
 > 
 > 2.  error messages with stacktraces
@@ -36,16 +28,10 @@ as much of these items as you have:
 > 4.  any relevant configuration settings
 > 
 > 5.  environment details
-> 
-> </div>
 
 When submitting a feature request, please submit them in the form of a
 user story with acceptance criteria:
 
-> 
-> 
-> <div>
-> 
 > As a \[user\], I want \[a thing\], So that \[some goal\].
 > 
 > When complete, I will be able to:
@@ -55,22 +41,12 @@ user story with acceptance criteria:
 > 2.  \[do that\]
 > 
 > 3.  \[do another\]
-> 
-> </div>
-
-</div>
-
-<div id="contributing-code-pull-requests" class="section">
 
 ## Contributing Code (Pull Requests)
 
 All code contributions MUST come in the form of a pull-request.
 Pull-requests will be reviewed for a variety of criteria. This section
 attempts to capture as much of that criteria as possible.
-
-</div>
-
-<div id="readability-and-style-considerations" class="section">
 
 ## Readability and Style considerations
 
@@ -99,10 +75,6 @@ why that particular check was disabled and it MUST be scoped as narrowly
 as possible. i.e. Don’t disable linting on an entire class or method
 when disabling the check for a single statement will do.
 
-</div>
-
-<div id="code-testing-considerations" class="section">
-
 ## Code testing considerations
 
 We believe that well-tested code is a critical component to every
@@ -119,7 +91,3 @@ An attempt SHOULD be made to cover all code branches. You SHOULD also
 attempt to include tests for all class and method parameters. e.g. If a
 method accepts a boolean, there should be tests for when that boolean is
 True, False, and None.
-
-</div>
-
-</div>

@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.rbac\_fields
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -33,5 +31,3 @@ title: Source code for management.rbac\_fields
     [docs]    def pre_save(self, model_instance, add):
             """Save its time as now."""
             return timezone.now()
-
-</div>

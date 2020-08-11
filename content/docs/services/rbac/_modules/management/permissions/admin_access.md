@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.permissions.admin\_access
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -35,5 +33,3 @@ title: Source code for management.permissions.admin\_access
             if ENVIRONMENT.get_value("ALLOW_ANY", default=False, cast=bool):
                 return True
             return request.user.admin
-
-</div>

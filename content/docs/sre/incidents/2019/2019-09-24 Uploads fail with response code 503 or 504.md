@@ -1,50 +1,44 @@
 ---
-date: 2019-10-11 11:05:07.334000
+date: 2019-10-11 15:05:07.334000
 title: 2019-09-24 Uploads fail with response code 503 or 504
 ---
-# <span dir="ltr">Overview</span>
+# Overview
 
-<span dir="ltr">An alert fired at 2019-09-24T17:21:00Z due to upload
-failures with response codes of 503 and 504.</span>
+An alert fired at 2019-09-24T17:21:00Z due to upload failures with
+response codes of 503 and 504.
 
-# <span dir="ltr">What Happened</span>
+# What Happened
 
-<span dir="ltr">All requests to the production cluster were
-intermittently receiving HTTP 503 and 504 response codes from Akamai.
-Taking one of the Akamai reference IDs from a response and querying
-Akamai for it revealed that the upstream server dropped the
-connection.</span>
+All requests to the production cluster were intermittently receiving
+HTTP 503 and 504 response codes from Akamai. Taking one of the Akamai
+reference IDs from a response and querying Akamai for it revealed that
+the upstream server dropped the connection.
 
-# <span dir="ltr">Resolution</span>
+# Resolution
 
-<span dir="ltr">The issue seemed to resolve on its own.</span>
+The issue seemed to resolve on its own.
 
-# <span dir="ltr">Root Causes</span>
+# Root Causes
 
-<span dir="ltr">Haproxy seemed to be the root cause since it has to be
-the service dropping connections since it is what Akamai directly
-connect to.</span>
+Haproxy seemed to be the root cause since it has to be the service
+dropping connections since it is what Akamai directly connect to.
 
-# <span dir="ltr">Impact</span>
+# Impact
 
-<span dir="ltr">Some requests failed and had to be retried.</span>
+Some requests failed and had to be retried.
 
-# <span dir="ltr">What Went Well?</span>
+# What Went Well?
 
-<span dir="ltr">The alert fired.</span>
+The alert fired.
 
-# <span dir="ltr">What Didn't Go So Well?</span>
+# What Didn't Go So Well?
 
-1.  > <span dir="ltr">The root cause was never determined because of the
-    > difficulty to debug our haproxy router. We could have filed a
-    > ticket with OSD, but the issue seemed to resolve itself before we
-    > reached this point.</span>
+1.  > The root cause was never determined because of the difficulty to
+    > debug our haproxy router. We could have filed a ticket with OSD,
+    > but the issue seemed to resolve itself before we reached this
+    > point.
 
-# <span dir="ltr">Action Items</span>
+# Action Items
 
-<span dir="ltr">Unfortunately there were no actions to take since RCA
-was never determined</span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
+Unfortunately there were no actions to take since RCA was never
+determined

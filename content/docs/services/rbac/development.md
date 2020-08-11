@@ -1,13 +1,9 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Development Information
 ---
-<div id="development-information" class="section">
 
-
-<div class="toctree-wrapper compound">
-
-<span class="caption-text"> Contents: </span>
+Contents: 
 
   - [Insights Role Based Access Control README](../README/)
       - [About](../README/#about)
@@ -27,7 +23,3 @@ title: Development Information
       - [Mac OS](../openshift/#mac-os)
       - [Troubleshooting](../openshift/#troubleshooting)
   - [Generating the Template](../openshift/#generating-the-template)
-
-</div>
-
-</div>

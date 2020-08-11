@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.group.model
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -111,5 +109,3 @@ title: Source code for management.group.model
     if settings.ACCESS_CACHE_ENABLED and settings.ACCESS_CACHE_CONNECT_SIGNALS:
         signals.pre_delete.connect(group_deleted_cache_handler, sender=Group)
         signals.m2m_changed.connect(principals_to_groups_cache_handler, sender=Group.principals.through)
-
-</div>

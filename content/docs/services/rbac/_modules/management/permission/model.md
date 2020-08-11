@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.permission.model
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -41,5 +39,3 @@ title: Source code for management.permission.model
             self.resource_type = context[1]
             self.verb = context[2]
             super(Permission, self).save(*args, **kwargs)
-
-</div>

@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for functools
 ---
-
-<div class="highlight">
 
     """functools.py - Tools for working with functions and callable objects
     """
@@ -821,5 +819,3 @@ title: Source code for functools
         wrapper._clear_cache = dispatch_cache.clear
         update_wrapper(wrapper, func)
         return wrapper
-
-</div>

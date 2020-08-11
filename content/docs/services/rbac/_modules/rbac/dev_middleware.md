@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for rbac.dev\_middleware
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -54,5 +52,3 @@ title: Source code for rbac.dev\_middleware
                 json_identity = json_dumps(identity_header)
                 dev_header = b64encode(json_identity.encode("utf-8"))
                 request.META[self.header] = dev_header
-
-</div>

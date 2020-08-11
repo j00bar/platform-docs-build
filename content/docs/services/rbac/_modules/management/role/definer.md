@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.role.definer
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -125,5 +123,3 @@ title: Source code for management.role.definer
                 # Permission.objects.exclude(id__in=current_permission_ids).delete()
                 # Override delete methods for Permission to remove the related Access objects
         return tenant
-
-</div>

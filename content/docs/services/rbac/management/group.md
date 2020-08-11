@@ -1,21 +1,13 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Managing Groups
 ---
-<div id="managing-groups" class="section">
-
 
 A group is a collection of principals used to grant access to a
 resource. A principal can be a member of many groups. A group can be
 associated with multiple roles.
 
-<div id="permissions-for-group-api-access" class="section">
-
 ## Permissions for Group API access
 
 A user can to view (read) groups. Only administrator can view (read)
 groups or create/update (write) groups.
-
-</div>
-
-</div>

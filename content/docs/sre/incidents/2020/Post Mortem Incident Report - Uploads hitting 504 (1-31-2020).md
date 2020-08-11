@@ -1,205 +1,169 @@
 ---
-date: 2020-06-17 15:08:17.503000
+date: 2020-06-17 19:08:17.503000
 title: Post Mortem Incident Report - Uploads hitting 504 (1-31-2020)
 ---
-## <span dir="ltr">Overview</span>
+## Overview
 
-*<span dir="ltr">Clients were 504-ing when running insights-client, this
-caused the following BZ to be opened:</span>*
+*Clients were 504-ing when running insights-client, this caused the
+following BZ to be
+opened:*
 
-<span dir="ltr">[*<span class="underline">https://bugzilla.redhat.com/show\_bug.cgi?id=1796795</span>*](https://bugzilla.redhat.com/show_bug.cgi?id=1796795)</span>
+[*https://bugzilla.redhat.com/show\_bug.cgi?id=1796795*](https://bugzilla.redhat.com/show_bug.cgi?id=1796795)
 
-***<span dir="ltr">“Insights uploads are failing with error "Upload
-archive failed with status code 504"”</span>***
+***“Insights uploads are failing with error "Upload archive failed with
+status code 504"”***
 
-<span dir="ltr"></span>
+## What Happened
 
-## <span dir="ltr">What Happened</span>
+*RabbitMQ pods as well as insights-plugins-amqp were crashing / throwing
+errors. Bouncing only the failed pods met with limited success, what
+finally fixed the issue was:*
 
-*<span dir="ltr">RabbitMQ pods as well as insights-plugins-amqp were
-crashing / throwing errors. Bouncing only the failed pods met with
-limited success, what finally fixed the issue was:</span>*
+*oc rollout latest dc/rabbitmq*
 
-*<span dir="ltr">oc rollout latest dc/rabbitmq</span>*
+*oc rollout latest dc/insights-plugins-amqp*
 
-*<span dir="ltr">oc rollout latest dc/insights-plugins-amqp</span>*
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">Timeline</span>
+## Timeline
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Time (EST)</span></strong></th>
-<th><strong><span dir="ltr">Notes</span></strong></th>
+<th><strong>Time (EST)</strong></th>
+<th><strong>Notes</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">6:47 AM</span></td>
-<td><span dir="ltr">BZ is created -</span> <span dir="ltr"><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1796795"><span class="underline"> https://bugzilla.redhat.com/show_bug.cgi?id=1796795</span></a></span></td>
+<td>6:47 AM</td>
+<td>BZ is created - <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1796795"><span class="underline">https://bugzilla.redhat.com/show_bug.cgi?id=1796795</span></a></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">7:47 AM</span></td>
-<td><span dir="ltr">Page is sent out by QE</span></td>
+<td>7:47 AM</td>
+<td>Page is sent out by QE</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">7:49 AM</span></td>
-<td><span dir="ltr">Page is ACKd</span></td>
+<td>7:49 AM</td>
+<td>Page is ACKd</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">8:12 AM</span></td>
-<td><span dir="ltr">MQueue issue was identified</span></td>
+<td>8:12 AM</td>
+<td>MQueue issue was identified</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">8:45 AM</span></td>
-<td><span dir="ltr">Limited upload service was restored</span></td>
+<td>8:45 AM</td>
+<td>Limited upload service was restored</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">9:14 AM</span></td>
-<td><span dir="ltr">Upload service fully restored</span></td>
+<td>9:14 AM</td>
+<td>Upload service fully restored</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-<span dir="ltr"></span>
+## Resolution
 
-## <span dir="ltr">Resolution</span>
+*Include a description what solved the problem. If there was a temporary
+fix in place, describe that along with the long-term solution.*
 
-*<span dir="ltr">Include a description what solved the problem. If there
-was a temporary fix in place, describe that along with the long-term
-solution.</span>*
+## Root Causes
 
-<span dir="ltr"></span>
+*Include a description of any conditions that contributed to the issue.
+If there were any actions taken that exacerbated the issue, also include
+them here with the intention of learning from any mistakes made during
+the resolution process.*
 
-## <span dir="ltr">Root Causes</span>
+## Impact
 
-*<span dir="ltr">Include a description of any conditions that
-contributed to the issue. If there were any actions taken that
-exacerbated the issue, also include them here with the intention of
-learning from any mistakes made during the resolution process.</span>*
+*Be specific here. Include numbers such as customers affected, cost to
+business, etc.*
 
-<span dir="ltr"></span>
+## What went well?
 
-## <span dir="ltr">Impact</span>
+*List anything you think we did well and want to call out. It's okay to
+not list anything.*
 
-*<span dir="ltr">Be specific here. Include numbers such as customers
-affected, cost to business, etc.</span>*
+  - 
+  - 
+## What didn’t go so well?
 
-<span dir="ltr"></span>
+*List anything you think we didn't do very well. The intent is that we
+should follow up on all points here to improve our processes.*
 
-<span dir="ltr"></span>
+## Action Items
 
-## <span dir="ltr">What went well?</span>
+*Include action items such as: *
 
-*<span dir="ltr">List anything you think we did well and want to call
-out. It's okay to not list anything.</span>*
+*(1) fixes required to prevent the issue in the future, *
 
-  - > <span dir="ltr"></span>
+*(2) preparedness tasks that could help mitigate a similar incident if
+it came up again, *
 
-  - > <span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">What didn’t go so well?</span>
-
-<span dir="ltr">*List anything you think we didn't do very well. The
-intent is that we should follow up on all points here to improve our
-processes.*</span>
-
-> <span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-## <span dir="ltr">Action Items</span>
-
-*<span dir="ltr">Include action items such as:</span>*
-
-*<span dir="ltr">(1) fixes required to prevent the issue in the
-future,</span>*
-
-*<span dir="ltr">(2) preparedness tasks that could help mitigate a
-similar incident if it came up again,</span>*
-
-*<span dir="ltr">(3) remaining postmortem steps, such as an internal
-follow-up email, updating the public status page, etc</span>*
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
+*(3) remaining postmortem steps, such as an internal follow-up email,
+updating the public status page, etc*
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Action Item</span></strong></th>
-<th><strong><span dir="ltr">Status</span></strong></th>
+<th><strong>Action Item</strong></th>
+<th><strong>Status</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>
-
-<span dir="ltr"></span>

@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for management.role.serializer
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -274,5 +272,3 @@ title: Source code for management.role.serializer
             return (assigned_groups | Group.platform_default_set()).distinct()
     
         return Group.objects.filter(policies__in=policy_ids).distinct()
-
-</div>

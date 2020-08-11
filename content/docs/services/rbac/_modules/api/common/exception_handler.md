@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for api.common.exception\_handler
 ---
-
-<div class="highlight">
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -79,5 +77,3 @@ title: Source code for api.common.exception\_handler
             response.data = error_response
     
         return response
-
-</div>

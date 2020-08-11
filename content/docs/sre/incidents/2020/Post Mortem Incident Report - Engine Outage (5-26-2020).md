@@ -1,198 +1,183 @@
 ---
-date: 2020-06-17 15:09:17.927000
+date: 2020-06-17 19:09:17.927000
 title: Post Mortem Incident Report - Engine Outage (5-26-2020)
 ---
-## <span dir="ltr">Overview</span>
+## Overview
 
-<span dir="ltr">Around 1916 CDT the kafka topic lag for the Insights
-Engine consumer group exceeded its alert threshold for roughly 12
-hours.</span>
+Around 1916 CDT the kafka topic lag for the Insights Engine consumer
+group exceeded its alert threshold for roughly 12 hours.
 
-## <span dir="ltr">What Happened</span>
+## What Happened
 
-<span dir="ltr">The alert “PlatformKafkaLagMaxExceededHard” was
-triggered for the consumer group “insights-core-kafka”. The lag peaked
-at around 140k and then leveled out to \~70k for a while, then slowly
-went down over the course of the next 12h.</span>
+The alert “PlatformKafkaLagMaxExceededHard” was triggered for the
+consumer group “insights-core-kafka”. The lag peaked at around 140k and
+then leveled out to ~70k for a while, then slowly went down over the
+course of the next 12h.
 
-<span dir="ltr"></span>
+The insights-core-kafka consumer group corresponds to the
+insights-engine deployment in production. Looking at this deployment, a
+significant portion (\>10 pods) of the pods were getting OOMKilled and
+crashlooping.
 
-<span dir="ltr">The insights-core-kafka consumer group corresponds to
-the insights-engine deployment in production. Looking at this
-deployment, a significant portion (\>10 pods) of the pods were getting
-OOMKilled and crashlooping.</span>
+## Contributing Factors
 
-## <span dir="ltr">Contributing Factors</span>
+A new version of the engine had been rolled out earlier in the day.
 
-<span dir="ltr">A new version of the engine had been rolled out earlier
-in the day.</span>
+## Resolution
 
-## <span dir="ltr">Resolution</span>
+  - > Rolled back using “oc rollback”. I saw that pods were still
+    > getting OOMKilled and realized that the engine was managed by
+    > app-interface, and gave up on this for a while.
 
-  - > <span dir="ltr">Rolled back using “oc rollback”. I saw that pods
-    > were still getting OOMKilled and realized that the engine was
-    > managed by app-interface, and gave up on this for a while.</span>
+  - > Increased memory limit from 1Gi to 3Gi. This seemed to have no
+    > effect.
 
-  - > <span dir="ltr">Increased memory limit from 1Gi to 3Gi. This
-    > seemed to have no effect.</span>
+  - > Rolled back to a previous version of the engine using app
+    > interface. This initially seemed to have no effect because we
+    > continued to see OOMKills, but over time it appeared that there
+    > were significantly fewer OOMKills over time, seemingly allowing
+    > the topic lag to slowly decrease over time.
 
-  - > <span dir="ltr">Rolled back to a previous version of the engine
-    > using app interface. This initially seemed to have no effect
-    > because we continued to see OOMKills, but over time it appeared
-    > that there were significantly fewer OOMKills over time, seemingly
-    > allowing the topic lag to slowly decrease over time.</span>
+## Impact
 
-## <span dir="ltr">Impact</span>
+All archives were eventually processed; it just took upwards of 12 hours
+for some to complete.
 
-<span dir="ltr">All archives were eventually processed; it just took
-upwards of 12 hours for some to complete.</span>
-
-## <span dir="ltr">Timeline</span>
-
-<span dir="ltr"></span>
+## Timeline
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Time (CDT)</span></strong></th>
-<th><strong><span dir="ltr">Notes</span></strong></th>
+<th><strong>Time (CDT)</strong></th>
+<th><strong>Notes</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">1916</span></td>
-<td><span dir="ltr">Alert triggered. PD incident 81158</span></td>
+<td>1916</td>
+<td>Alert triggered. PD incident 81158</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">1945</span></td>
-<td><span dir="ltr">Rolled back to previous version of deployment</span></td>
+<td>1945</td>
+<td>Rolled back to previous version of deployment</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">1951</span></td>
-<td><span dir="ltr">Applied 3Gi memory limit via app-interface: <a href="https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5013"><span class="underline">https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5013</span></a></span></td>
+<td>1951</td>
+<td>Applied 3Gi memory limit via app-interface: <a href="https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5013"><span class="underline">https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5013</span></a></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">2031</span></td>
-<td><span dir="ltr">Escalated to Stephen Adams</span></td>
+<td>2031</td>
+<td>Escalated to Stephen Adams</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">2046</span></td>
-<td><span dir="ltr">Escalated to Ben Turner; responded immediately</span></td>
+<td>2046</td>
+<td>Escalated to Ben Turner; responded immediately</td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">2126</span></td>
-<td><span dir="ltr">Stephen responded</span></td>
+<td>2126</td>
+<td>Stephen responded</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">2151</span></td>
-<td><span dir="ltr">Rolled back to previous version via app-interface: <a href="https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5014"><span class="underline">https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5014</span></a></span></td>
+<td>2151</td>
+<td>Rolled back to previous version via app-interface: <a href="https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5014"><span class="underline">https://gitlab.cee.redhat.com/service/app-interface/merge_requests/5014</span></a></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">2223</span></td>
-<td><span dir="ltr">Resolved PD incident and silenced alert for 12 hours.</span></td>
+<td>2223</td>
+<td>Resolved PD incident and silenced alert for 12 hours.</td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-<span dir="ltr"></span>
+### Observations
 
-### <span dir="ltr">Observations</span>
-
-  - > <span dir="ltr">insights-engine was running the following rulesets
-    > on the initial image</span>
+  - > insights-engine was running the following rulesets on the initial
+    > image
     
-      - > <span dir="ltr">insights-plugins-2.0.121</span>
+      - > insights-plugins-2.0.121
     
-      - > <span dir="ltr">prodsec-rules-1.0.70-1525</span>
+      - > prodsec-rules-1.0.70-1525
 
-  - > <span dir="ltr">Message consumption seemed to stay around the same
-    > message per minute rate, even though the lag appeared to
-    > increase.</span>
+  - > Message consumption seemed to stay around the same message per
+    > minute rate, even though the lag appeared to increase.
 
-  - > <span dir="ltr">The upload count for the event was strikingly
-    > similar to the previous night. Indicating that this lag was not
-    > caused by an influx of uploads.</span>
+  - > The upload count for the event was strikingly similar to the
+    > previous night. Indicating that this lag was not caused by an
+    > influx of uploads.
 
-  - > <span dir="ltr">On May 26, 2020, insights-engine was updated to
-    > the latest image on this date. The only code changes that would
-    > have had an impact are insights-plugins and insights-core changes.
-    > The engine itself didn’t have any major changes.</span>
+  - > On May 26, 2020, insights-engine was updated to the latest image
+    > on this date. The only code changes that would have had an impact
+    > are insights-plugins and insights-core changes. The engine itself
+    > didn’t have any major changes.
 
-### <span dir="ltr">What didn’t go so well?</span>
+### What didn’t go so well?
 
-  - > <span dir="ltr">No SOP for lag alert</span>
+  - > No SOP for lag alert
 
-  - > <span dir="ltr">Insufficient logging available to track down
-    > RCA</span>
+  - > Insufficient logging available to track down RCA
 
-  - > <span dir="ltr">Difficult to apply changes to production
-    > environment via app-interface</span>
+  - > Difficult to apply changes to production environment via
+    > app-interface
 
-  - > <span dir="ltr">Version of components within insights-engine
-    > obfuscated</span>
+  - > Version of components within insights-engine obfuscated
 
-## <span dir="ltr">Action Items</span>
-
-<span dir="ltr"></span>
+## Action Items
 
 <table>
 <thead>
 <tr class="header">
-<th><strong><span dir="ltr">Action Item</span></strong></th>
-<th><strong><span dir="ltr">Status</span></strong></th>
+<th><strong>Action Item</strong></th>
+<th><strong>Status</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span dir="ltr">Include consumer group name in alert</span></td>
-<td><span dir="ltr"></span></td>
+<td>Include consumer group name in alert</td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">Silence insights.core.plugins log messages</span></td>
-<td><span dir="ltr"></span></td>
+<td>Silence insights.core.plugins log messages</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">Add a log statement for every archive processed, including request ID and system ID</span></td>
-<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6707"><span class="underline">RHCLOUD-6707</span></a></span></td>
+<td>Add a log statement for every archive processed, including request ID and system ID</td>
+<td><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6707"><span class="underline">RHCLOUD-6707</span></a></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">Ensure procedure for merging changes to app-interface during an outage is well defined</span></td>
-<td><span dir="ltr"></span></td>
+<td>Ensure procedure for merging changes to app-interface during an outage is well defined</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">Create SOPs for Kafka Lag alerts</span></td>
-<td><span dir="ltr"><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6706"><span class="underline">RHCLOUD-6706</span></a></span></td>
+<td>Create SOPs for Kafka Lag alerts</td>
+<td><a href="https://projects.engineering.redhat.com/browse/RHCLOUD-6706"><span class="underline">RHCLOUD-6706</span></a></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr">Create a grafana dashboard to assist with outages with the engine and/or ingress pipeline</span></td>
-<td><span dir="ltr"></span></td>
+<td>Create a grafana dashboard to assist with outages with the engine and/or ingress pipeline</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr">Better document which document</span></td>
-<td><span dir="ltr"></span></td>
+<td>Better document which document</td>
+<td></td>
 </tr>
 <tr class="even">
-<td><p><span dir="ltr">Identify root causes for exceptions in logs:</span></p>
-<p><span dir="ltr">"insights-engine" AND NOT name: insights.core.plugins AND (levelname: ERROR OR levelname: WARNING)</span></p></td>
-<td><span dir="ltr"></span></td>
+<td><p>Identify root causes for exceptions in logs:</p>
+<p>&quot;insights-engine&quot; AND NOT name: insights.core.plugins AND (levelname: ERROR OR levelname: WARNING)</p></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td><span dir="ltr"></span></td>
-<td><span dir="ltr"></span></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
-<span dir="ltr"></span>

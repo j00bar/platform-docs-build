@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Working with OpenShift
 ---
-<div id="working-with-openshift" class="section">
-
 
 We are currently developing using OpenShift version 3.11. There are
 different setup requirements for Mac OS and Linux (instructions are
@@ -17,27 +15,13 @@ either bash/zsh and is available by running oc completion bash|zsh The
 following example generates a shell script for completion and sources
 the file.
 
-<div class="highlight-default notranslate">
-
-<div class="highlight">
-
     oc completion zsh > $HOME/.oc/oc_completion.sh
     source $HOME/.oc/oc_completion.sh
-
-</div>
-
-</div>
-
-<div id="local-development-cluster" class="section">
 
 ## Local Development Cluster
 
 The following commands can be used to manually create an OpenShift
 cluster with the necessary components to run RBAC.
-
-<div class="highlight-default notranslate">
-
-<div class="highlight">
 
     # bring up a new dev cluster
     oc cluster up \
@@ -57,15 +41,7 @@ cluster with the necessary components to run RBAC.
     # create the app
     oc new-app openshift/templates/django-postgresql-persistent.json
 
-</div>
-
-</div>
-
 Alternatively, make commands are provided as a convenience.
-
-<div class="highlight-default notranslate">
-
-<div class="highlight">
 
     # Start the OpenShift cluster
     make oc-up
@@ -76,18 +52,10 @@ Alternatively, make commands are provided as a convenience.
     # Clean out local data
     make oc-clean
 
-</div>
-
-</div>
-
 There are a few ways to use OpenShift while developing RBAC. It is
 possible to spin up the entire application and its dependent services,
 or just the dependent services can be spun up while using the local
 Django dev server.
-
-<div class="highlight-default notranslate">
-
-<div class="highlight">
 
     # Run everything through OpenShift
     make oc-up-all
@@ -99,16 +67,8 @@ Django dev server.
     # Run the Django server locally with access to the OpenShift database
     make oc-serve
 
-</div>
-
-</div>
-
 To gain temporary access to the database within OpenShift, port
 forwarding is used.
-
-<div class="highlight-default notranslate">
-
-<div class="highlight">
 
     # Port forward to 15432
     make oc-forward-ports
@@ -117,14 +77,6 @@ forwarding is used.
     
     # Stop port forwarding
     make oc-stop-forwarding-ports
-
-</div>
-
-</div>
-
-</div>
-
-<div id="fedora" class="section">
 
 ## Fedora
 
@@ -137,10 +89,6 @@ Then follow these instructions to get OpenShift setup [OpenShift —
 Fedora Developer
 Portal](https://developer.fedoraproject.org/deployment/openshift/about.html)
 .
-
-</div>
-
-<div id="mac-os" class="section">
 
 ## Mac OS
 
@@ -162,10 +110,6 @@ details information about insecure registries [Test an insecure registry
 Add 172.30.1.1 to the list of proxies to bypass. This can be found at
 Docker -\> Preferences -\> Proxies
 
-</div>
-
-<div id="troubleshooting" class="section">
-
 ## Troubleshooting
 
 OpenShift uses Docker to run containers. When running a cluster locally
@@ -177,25 +121,9 @@ Also, if Openshift services misbehave or do not deploy properly, it can
 be useful to spin the cluster down, restart the Docker service and
 retry.
 
-</div>
-
-</div>
-
-<div id="generating-the-template" class="section">
-
 # Generating the Template
 
 To generate a new template from a running configuration, use this
 command.
 
-<div class="highlight-default notranslate">
-
-<div class="highlight">
-
     oc export all -o yaml --as-template=my-new-template > openshift/my-new-template.yaml
-
-</div>
-
-</div>
-
-</div>

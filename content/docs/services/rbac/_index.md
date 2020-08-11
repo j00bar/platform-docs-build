@@ -1,19 +1,15 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: "Welcome to Insights RBAC service\u2019s documentation\\!"
 weight: 0
 ---
-<div id="welcome-to-insights-rbac-service-s-documentation" class="section">
-
 
 RBAC, accessed through the application program interface (API), is a
 role based access control tool. It is designed to identify principals,
 define and associate them with groups, define roles, and define policies
 that relate a group and roles.
 
-<div class="toctree-wrapper compound">
-
-<span class="caption-text"> Contents: </span>
+Contents: 
 
   - [Managing Resources with Role Based Access Control](management/)
       - [Managing Principals](management/#managing-principals)
@@ -27,18 +23,10 @@ that relate a group and roles.
   - [Installation](install/)
       - [Deploying the RBAC API](install/#deploying-the-rbac-api)
 
-</div>
-
-</div>
-
-<div id="indices-and-tables" class="section">
-
 # Indices and tables
 
-  - [<span class="std std-ref"> Index </span>](genindex/)
+  - [ Index ](genindex/)
 
-  - [<span class="std std-ref"> Module Index </span>](py-modindex/)
+  - [ Module Index ](py-modindex/)
 
-  - [<span class="std std-ref"> Search Page </span>](search/)
-
-</div>
+  - [ Search Page ](search/)

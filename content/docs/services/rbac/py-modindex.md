@@ -1,13 +1,9 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Python Module Index
 ---
 
-<div class="modindex-jumpbox">
-
 [**a**](#cap-a) | [**g**](#cap-g) | [**m**](#cap-m) | [**r**](#cap-r)
-
-</div>
 
 <table>
 <tbody>
@@ -22,7 +18,7 @@ title: Python Module Index
 <td></td>
 </tr>
 <tr class="odd">
-<td><img src="_static/minus.png" id="toggle-1" class="toggler" alt="-" /></td>
+<td><img src="_static/minus.png" alt="-" id="toggle-1" class="toggler" /></td>
 <td><a href="../rbac/api/#module-api"><code class="xref">      api     </code></a></td>
 <td><em></em></td>
 </tr>
@@ -117,7 +113,7 @@ title: Python Module Index
 <td><em></em></td>
 </tr>
 <tr class="even">
-<td><img src="_static/minus.png" id="toggle-2" class="toggler" alt="-" /></td>
+<td><img src="_static/minus.png" alt="-" id="toggle-2" class="toggler" /></td>
 <td><a href="../rbac/management/#module-management"><code class="xref">      management     </code></a></td>
 <td><em></em></td>
 </tr>
@@ -352,7 +348,7 @@ title: Python Module Index
 <td></td>
 </tr>
 <tr class="odd">
-<td><img src="_static/minus.png" id="toggle-3" class="toggler" alt="-" /></td>
+<td><img src="_static/minus.png" alt="-" id="toggle-3" class="toggler" /></td>
 <td><a href="../rbac/rbac/#module-rbac"><code class="xref">      rbac     </code></a></td>
 <td><em></em></td>
 </tr>

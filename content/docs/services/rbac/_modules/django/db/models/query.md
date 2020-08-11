@@ -1,9 +1,7 @@
 ---
-date: 2020-08-03 13:09:33
+date: 2020-08-03 17:09:33
 title: Source code for django.db.models.query
 ---
-
-<div class="highlight">
 
     """
     The main QuerySet implementation. This provides the public API for the ORM.
@@ -1902,5 +1900,3 @@ title: Source code for django.db.models.query
             rel_cls = RelatedPopulator(rel_klass_info, select, db)
             iterators.append(rel_cls)
         return iterators
-
-</div>
