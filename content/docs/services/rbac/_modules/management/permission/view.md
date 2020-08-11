@@ -1,7 +1,14 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Source code for management.permission.view
 ---
+### Navigation
+
+  - [index](../../../../genindex/ "General Index")
+  - [modules](../../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../../index/) »
+  - [Module code](../../../index/) »
+
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -97,3 +104,15 @@ title: Source code for management.permission.view
             }
             """
             return super().list(request=request, args=args, kwargs=kwargs)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../../../genindex/ "General Index")
+  - [modules](../../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../../index/) »
+  - [Module code](../../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

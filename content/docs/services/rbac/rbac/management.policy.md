@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: management.policy package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Submodules
 
@@ -587,3 +593,29 @@ View for policy management.
         > }
 
 ## Module contents
+
+### [Table of Contents](../../index/)
+
+  - [management.policy package](#)
+      - [Submodules](#submodules)
+      - [management.policy.model
+        module](#module-management.policy.model)
+      - [management.policy.serializer
+        module](#module-management.policy.serializer)
+      - [management.policy.view module](#module-management.policy.view)
+      - [Module contents](#module-management.policy)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/management.policy.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

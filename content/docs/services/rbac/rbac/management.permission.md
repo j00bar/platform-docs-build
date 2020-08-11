@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: management.permission package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Submodules
 
@@ -244,3 +250,30 @@ View for permission management.
       -  ` suffix ` *= None* 
 
 ## Module contents
+
+### [Table of Contents](../../index/)
+
+  - [management.permission package](#)
+      - [Submodules](#submodules)
+      - [management.permission.model
+        module](#module-management.permission.model)
+      - [management.permission.serializer
+        module](#module-management.permission.serializer)
+      - [management.permission.view
+        module](#module-management.permission.view)
+      - [Module contents](#module-management.permission)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/management.permission.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: api package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Subpackages
 
@@ -149,3 +155,30 @@ API views for import organization
 ## Module contents
 
 Configuration for the api app.
+
+### [Table of Contents](../../index/)
+
+  - [api package](#)
+      - [Subpackages](#subpackages)
+      - [Submodules](#submodules)
+      - [api.apps module](#module-api.apps)
+      - [api.models module](#module-api.models)
+      - [api.serializers module](#module-api.serializers)
+      - [api.urls module](#module-api.urls)
+      - [api.views module](#module-api.views)
+      - [Module contents](#module-api)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/api.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

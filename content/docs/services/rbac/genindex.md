@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Index
 ---
+### Navigation
+
+  - [index](# "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+
 
 [**A**](#A) | [**B**](#B) | [**C**](#C) | [**D**](#D) | [**E**](#E) |
 [**F**](#F) | [**G**](#G) | [**H**](#H) | [**I**](#I) | [**K**](#K) |
@@ -1235,3 +1241,14 @@ title: Index
 </tr>
 </tbody>
 </table>
+
+### Quick search
+
+### Navigation
+
+  - [index](# "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

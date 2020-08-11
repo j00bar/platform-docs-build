@@ -1,7 +1,14 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Source code for rbac.dev\_middleware
 ---
+### Navigation
+
+  - [index](../../../genindex/ "General Index")
+  - [modules](../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../index/) »
+  - [Module code](../../index/) »
+
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -52,3 +59,15 @@ title: Source code for rbac.dev\_middleware
                 json_identity = json_dumps(identity_header)
                 dev_header = b64encode(json_identity.encode("utf-8"))
                 request.META[self.header] = dev_header
+
+### Quick search
+
+### Navigation
+
+  - [index](../../../genindex/ "General Index")
+  - [modules](../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../index/) »
+  - [Module code](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

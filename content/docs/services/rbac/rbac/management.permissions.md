@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: management.permissions package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Submodules
 
@@ -86,3 +92,34 @@ Defines the Access Permissions Utility Class.
 ## Module contents
 
 Permissions for import organization.
+
+### [Table of Contents](../../index/)
+
+  - [management.permissions package](#)
+      - [Submodules](#submodules)
+      - [management.permissions.admin\_access
+        module](#module-management.permissions.admin_access)
+      - [management.permissions.group\_access
+        module](#module-management.permissions.group_access)
+      - [management.permissions.policy\_access
+        module](#module-management.permissions.policy_access)
+      - [management.permissions.role\_access
+        module](#module-management.permissions.role_access)
+      - [management.permissions.utils
+        module](#module-management.permissions.utils)
+      - [Module contents](#module-management.permissions)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/management.permissions.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

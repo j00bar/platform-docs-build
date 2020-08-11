@@ -1,7 +1,14 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Source code for management.role.model
 ---
+### Navigation
+
+  - [index](../../../../genindex/ "General Index")
+  - [modules](../../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../../index/) »
+  - [Module code](../../../index/) »
+
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -125,3 +132,15 @@ title: Source code for management.role.model
         signals.post_save.connect(role_related_obj_change_cache_handler, sender=Role)
         signals.post_save.connect(role_related_obj_change_cache_handler, sender=Access)
         signals.post_save.connect(role_related_obj_change_cache_handler, sender=ResourceDefinition)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../../../genindex/ "General Index")
+  - [modules](../../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../../index/) »
+  - [Module code](../../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

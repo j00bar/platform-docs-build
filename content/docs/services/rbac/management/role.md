@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Managing Roles
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 A role defines a set of access control lists (ACLs). These ACLs define
 permissions and resource definitions.
@@ -66,3 +72,26 @@ multiple resource with an attribute filter as follows:
 Only administrator can view (read) roles or create/update (write) roles.
 Non-administrator can view (read) roles within their scope with scope
 specified in the API call - ` ?scope=principal ` .
+
+### [Table of Contents](../../index/)
+
+  - [Managing Roles](#)
+      - [Permissions](#permissions)
+      - [Resource Definitions](#resource-definitions)
+      - [Permissions for Role API
+        access](#permissions-for-role-api-access)
+
+### This Page
+
+  - [Show Source](../../_sources/management/role.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

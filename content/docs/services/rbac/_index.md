@@ -1,8 +1,17 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: "Welcome to Insights RBAC service\u2019s documentation\\!"
 weight: 0
 ---
+### Navigation
+
+  - [index](genindex/ "General Index")
+  - [modules](py-modindex/ "Python Module Index")
+    |
+  - [next](management/ "Managing Resources with Role Based Access Control")
+    |
+  - [Insights-rbac 0.0.1 documentation](#) »
+
 
 RBAC, accessed through the application program interface (API), is a
 role based access control tool. It is designed to identify principals,
@@ -30,3 +39,31 @@ Contents:
   - [ Module Index ](py-modindex/)
 
   - [ Search Page ](search/)
+
+### [Table of Contents](#)
+
+  - [Welcome to Insights RBAC service’s documentation\!](#)
+  - [Indices and tables](#indices-and-tables)
+
+#### Next topic
+
+[Managing Resources with Role Based Access
+Control](management/ "next chapter")
+
+### This Page
+
+  - [Show Source](_sources/index.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](genindex/ "General Index")
+  - [modules](py-modindex/ "Python Module Index")
+    |
+  - [next](management/ "Managing Resources with Role Based Access Control")
+    |
+  - [Insights-rbac 0.0.1 documentation](#) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

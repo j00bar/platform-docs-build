@@ -1,7 +1,16 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Contributing to insights-rbac
 ---
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../openshift/ "Working with OpenShift") |
+  - [previous](../README/ "Insights Role Based Access Control README") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+  - [Development Information](../development/) »
+
 
 Thank you for your interest in contributing to this project\!
 
@@ -91,3 +100,41 @@ An attempt SHOULD be made to cover all code branches. You SHOULD also
 attempt to include tests for all class and method parameters. e.g. If a
 method accepts a boolean, there should be tests for when that boolean is
 True, False, and None.
+
+### [Table of Contents](../index/)
+
+  - [Contributing to insights-rbac](#)
+      - [Reporting Bugs & Requesting
+        Features](#reporting-bugs-requesting-features)
+      - [Contributing Code (Pull
+        Requests)](#contributing-code-pull-requests)
+      - [Readability and Style
+        considerations](#readability-and-style-considerations)
+      - [Code testing considerations](#code-testing-considerations)
+
+#### Previous topic
+
+[Insights Role Based Access Control
+README](../README/ "previous chapter")
+
+#### Next topic
+
+[Working with OpenShift](../openshift/ "next chapter")
+
+### This Page
+
+  - [Show Source](../_sources/CONTRIBUTING.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../openshift/ "Working with OpenShift") |
+  - [previous](../README/ "Insights Role Based Access Control README") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+  - [Development Information](../development/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

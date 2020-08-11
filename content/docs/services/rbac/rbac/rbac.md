@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: rbac package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Submodules
 
@@ -170,3 +176,32 @@ For more information on this file, see
 ## Module contents
 
 RBAC project module.
+
+### [Table of Contents](../../index/)
+
+  - [rbac package](#)
+      - [Submodules](#submodules)
+      - [rbac.celery module](#module-rbac.celery)
+      - [rbac.database module](#module-rbac.database)
+      - [rbac.dev\_middleware module](#module-rbac.dev_middleware)
+      - [rbac.env module](#module-rbac.env)
+      - [rbac.middleware module](#module-rbac.middleware)
+      - [rbac.settings module](#module-rbac.settings)
+      - [rbac.urls module](#module-rbac.urls)
+      - [rbac.wsgi module](#module-rbac.wsgi)
+      - [Module contents](#module-rbac)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/rbac.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

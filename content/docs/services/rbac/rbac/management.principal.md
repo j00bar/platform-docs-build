@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: management.principal package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Submodules
 
@@ -181,3 +187,34 @@ View for principal management.
         
 
 ## Module contents
+
+### [Table of Contents](../../index/)
+
+  - [management.principal package](#)
+      - [Submodules](#submodules)
+      - [management.principal.cleaner
+        module](#module-management.principal.cleaner)
+      - [management.principal.model
+        module](#module-management.principal.model)
+      - [management.principal.proxy
+        module](#module-management.principal.proxy)
+      - [management.principal.serializer
+        module](#module-management.principal.serializer)
+      - [management.principal.view
+        module](#module-management.principal.view)
+      - [Module contents](#module-management.principal)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/management.principal.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

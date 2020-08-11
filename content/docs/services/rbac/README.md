@@ -1,7 +1,17 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Insights Role Based Access Control README
 ---
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../CONTRIBUTING/ "Contributing to insights-rbac") |
+  - [previous](../development/ "Development Information") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+  - [Development Information](../development/)
+»
+
 
 [![license](https://img.shields.io/github/license/RedHatInsights/insights-rbac.svg)](https://github.com/RedHatInsights/insights-rbac/blob/master/LICENSE)
 [![Build
@@ -286,3 +296,54 @@ repo](https://github.com/RedHatInsights/rbac-config.git) .
 For additional information please refer to
 [Contributing](https://insights-rbac.readthedocs.io/en/latest/CONTRIBUTING.html)
 .
+
+### [Table of Contents](../index/)
+
+  - [Insights Role Based Access Control README](#)
+      - [About](#about)
+          - [Getting Started](#getting-started)
+          - [Development](#development)
+              - [Preferred Environment](#preferred-environment)
+              - [Alternative Environment](#alternative-environment)
+                  - [Configuration](#configuration)
+                  - [Database](#database)
+                  - [Seeds](#seeds)
+                  - [Server](#server)
+              - [Making Requests](#making-requests)
+                  - [Basic/JWT Auth with an Identity
+                    Header](#basic-jwt-auth-with-an-identity-header)
+                  - [Serivce to Service
+                    Requests](#serivce-to-service-requests)
+              - [API Documentation
+                Generation](#api-documentation-generation)
+              - [Testing and Linting](#testing-and-linting)
+              - [Caveats](#caveats)
+          - [Contributing](#contributing)
+              - [Repositories of the roles to be
+                seeded](#repositories-of-the-roles-to-be-seeded)
+
+#### Previous topic
+
+[Development Information](../development/ "previous chapter")
+
+#### Next topic
+
+[Contributing to insights-rbac](../CONTRIBUTING/ "next chapter")
+
+### This Page
+
+  - [Show Source](../_sources/README.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../CONTRIBUTING/ "Contributing to insights-rbac") |
+  - [previous](../development/ "Development Information") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+  - [Development Information](../development/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

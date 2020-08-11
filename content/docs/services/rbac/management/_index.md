@@ -1,8 +1,18 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Managing Resources with Role Based Access Control
 weight: 0
 ---
+### Navigation
+
+  - [index](genindex/ "General Index")
+  - [modules](py-modindex/ "Python Module Index") |
+  - [next](development/ "Development Information")
+    |
+  - [previous](index/ "Welcome to Insights RBAC service’s documentation!")
+    |
+  - [Insights-rbac 0.0.1 documentation](index/) »
+
 
 Users can control access to resources utilizing the Role Based Access
 Control (RBAC) service. Only Account administrators can manage RBAC
@@ -95,3 +105,44 @@ multiple resource with an attribute filter as follows:
 Only administrator can view (read) roles or create/update (write) roles.
 Non-administrator can view (read) roles within their scope with scope
 specified in the API call - ` ?scope=principal ` .
+
+### [Table of Contents](index/)
+
+  - [Managing Resources with Role Based Access Control](#)
+      - [Managing Principals](#managing-principals)
+      - [Managing Groups](#managing-groups)
+          - [Permissions for Group API
+            access](#permissions-for-group-api-access)
+      - [Managing Roles](#managing-roles)
+          - [Permissions](#permissions)
+          - [Resource Definitions](#resource-definitions)
+          - [Permissions for Role API
+            access](#permissions-for-role-api-access)
+
+#### Previous topic
+
+[Welcome to Insights RBAC service’s
+documentation\!](index/ "previous chapter")
+
+#### Next topic
+
+[Development Information](development/ "next chapter")
+
+### This Page
+
+  - [Show Source](_sources/management.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](genindex/ "General Index")
+  - [modules](py-modindex/ "Python Module Index") |
+  - [next](development/ "Development Information")
+    |
+  - [previous](index/ "Welcome to Insights RBAC service’s documentation!")
+    |
+  - [Insights-rbac 0.0.1 documentation](index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

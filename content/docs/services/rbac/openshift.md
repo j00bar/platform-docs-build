@@ -1,7 +1,16 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Working with OpenShift
 ---
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../install/ "Installation") |
+  - [previous](../CONTRIBUTING/ "Contributing to insights-rbac") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+  - [Development Information](../development/) »
+
 
 We are currently developing using OpenShift version 3.11. There are
 different setup requirements for Mac OS and Linux (instructions are
@@ -127,3 +136,38 @@ To generate a new template from a running configuration, use this
 command.
 
     oc export all -o yaml --as-template=my-new-template > openshift/my-new-template.yaml
+
+### [Table of Contents](../index/)
+
+  - [Working with OpenShift](#)
+      - [Local Development Cluster](#local-development-cluster)
+      - [Fedora](#fedora)
+      - [Mac OS](#mac-os)
+      - [Troubleshooting](#troubleshooting)
+  - [Generating the Template](#generating-the-template)
+
+#### Previous topic
+
+[Contributing to insights-rbac](../CONTRIBUTING/ "previous chapter")
+
+#### Next topic
+
+[Installation](../install/ "next chapter")
+
+### This Page
+
+  - [Show Source](../_sources/openshift.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../install/ "Installation") |
+  - [previous](../CONTRIBUTING/ "Contributing to insights-rbac") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+  - [Development Information](../development/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

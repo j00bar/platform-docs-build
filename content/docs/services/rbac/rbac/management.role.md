@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: management.role package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Submodules
 
@@ -951,3 +957,30 @@ View for role management.
         Validate the add field key.
 
 ## Module contents
+
+### [Table of Contents](../../index/)
+
+  - [management.role package](#)
+      - [Submodules](#submodules)
+      - [management.role.definer
+        module](#module-management.role.definer)
+      - [management.role.model module](#module-management.role.model)
+      - [management.role.serializer
+        module](#module-management.role.serializer)
+      - [management.role.view module](#module-management.role.view)
+      - [Module contents](#module-management.role)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/management.role.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

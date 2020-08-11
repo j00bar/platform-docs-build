@@ -1,7 +1,14 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Source code for management.group.model
 ---
+### Navigation
+
+  - [index](../../../../genindex/ "General Index")
+  - [modules](../../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../../index/) »
+  - [Module code](../../../index/) »
+
 
     #
     # Copyright 2019 Red Hat, Inc.
@@ -109,3 +116,15 @@ title: Source code for management.group.model
     if settings.ACCESS_CACHE_ENABLED and settings.ACCESS_CACHE_CONNECT_SIGNALS:
         signals.pre_delete.connect(group_deleted_cache_handler, sender=Group)
         signals.m2m_changed.connect(principals_to_groups_cache_handler, sender=Group.principals.through)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../../../genindex/ "General Index")
+  - [modules](../../../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../../../index/) »
+  - [Module code](../../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

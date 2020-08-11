@@ -1,7 +1,17 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Development Information
 ---
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../README/ "Insights Role Based Access Control README")
+    |
+  - [previous](../management/ "Managing Resources with Role Based Access Control")
+    |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+
 
 Contents: 
 
@@ -23,3 +33,31 @@ Contents:
       - [Mac OS](../openshift/#mac-os)
       - [Troubleshooting](../openshift/#troubleshooting)
   - [Generating the Template](../openshift/#generating-the-template)
+
+#### Previous topic
+
+[Managing Resources with Role Based Access
+Control](../management/ "previous chapter")
+
+#### Next topic
+
+[Insights Role Based Access Control README](../README/ "next chapter")
+
+### This Page
+
+  - [Show Source](../_sources/development.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [next](../README/ "Insights Role Based Access Control README")
+    |
+  - [previous](../management/ "Managing Resources with Role Based Access Control")
+    |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

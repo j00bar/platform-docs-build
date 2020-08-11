@@ -1,7 +1,14 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: Installation
 ---
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [previous](../openshift/ "Working with OpenShift") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+
 
 Insights RBAC provides a web server for its API interaction.
 
@@ -43,3 +50,28 @@ steps:
 
 This command will run database migraitons and start the API server. Once
 complete the API server will be running on port 8000 on your localhost.
+
+### [Table of Contents](../index/)
+
+  - [Installation](#)
+      - [Deploying the RBAC API](#deploying-the-rbac-api)
+
+#### Previous topic
+
+[Working with OpenShift](../openshift/ "previous chapter")
+
+### This Page
+
+  - [Show Source](../_sources/install.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../genindex/ "General Index")
+  - [modules](../py-modindex/ "Python Module Index") |
+  - [previous](../openshift/ "Working with OpenShift") |
+  - [Insights-rbac 0.0.1 documentation](../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.

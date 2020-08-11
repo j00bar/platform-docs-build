@@ -1,7 +1,13 @@
 ---
-date: 2020-08-03 17:09:33
+date: 2020-08-11 18:34:43.729025
 title: management package
 ---
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
 
 ## Subpackages
 
@@ -400,3 +406,37 @@ Helper utilities for management module.
 API views for import organization
 
 ## Module contents
+
+### [Table of Contents](../../index/)
+
+  - [management package](#)
+      - [Subpackages](#subpackages)
+      - [Submodules](#submodules)
+      - [management.apps module](#module-management.apps)
+      - [management.cache module](#module-management.cache)
+      - [management.filters module](#module-management.filters)
+      - [management.models module](#module-management.models)
+      - [management.querysets module](#module-management.querysets)
+      - [management.rbac\_fields module](#module-management.rbac_fields)
+      - [management.seeds module](#module-management.seeds)
+      - [management.serializers module](#module-management.serializers)
+      - [management.tasks module](#module-management.tasks)
+      - [management.urls module](#module-management.urls)
+      - [management.utils module](#module-management.utils)
+      - [management.views module](#module-management.views)
+      - [Module contents](#module-management)
+
+### This Page
+
+  - [Show Source](../../_sources/rbac/management.rst.txt)
+
+### Quick search
+
+### Navigation
+
+  - [index](../../genindex/ "General Index")
+  - [modules](../../py-modindex/ "Python Module Index") |
+  - [Insights-rbac 0.0.1 documentation](../../index/) »
+
+© Copyright 2019, Red Hat, Inc.. Created using
+[Sphinx](http://sphinx-doc.org/) 3.0.3.
