@@ -1,5 +1,5 @@
 ---
-date: 2020-08-24 20:29:21.726797
+date: 2020-08-24 20:47:50.866547
 title: Managing Resources with Role Based Access Control
 weight: 0
 ---

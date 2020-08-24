@@ -2,3 +2,5 @@
 node_modules
 themes
 .git
+credentials.json
+token.pickle
