@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Index
 ---
 ### Navigation
@@ -227,6 +227,7 @@ title: Index
 </ul></li>
 <li><a href="../rbac/rbac/#rbac.dev_middleware.DevelopmentIdentityHeaderMiddleware">DevelopmentIdentityHeaderMiddleware (class in rbac.dev_middleware)</a></li>
 <li><a href="../rbac/rbac/#rbac.middleware.DisableCSRF">DisableCSRF (class in rbac.middleware)</a></li>
+<li><a href="../rbac/management.role/#management.role.model.Role.display_name">display_name (management.role.model.Role attribute)</a></li>
 <li><a href="../rbac/api/#api.models.Tenant.domain_url">domain_url (api.models.Tenant attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.serializer.DynamicFieldsModelSerializer">DynamicFieldsModelSerializer (class in management.role.serializer)</a></li>
 </ul></td>
@@ -813,6 +814,7 @@ title: Index
 <li><a href="../rbac/rbac/#module-rbac.wsgi">rbac.wsgi</a></li>
 </ul></li>
 <li><a href="../rbac/api.status/#api.status.model.Status.modules">modules() (api.status.model.Status property)</a></li>
+<li><a href="../rbac/management/#management.filters.CommonFilters.multiple_values_in">multiple_values_in() (management.filters.CommonFilters method)</a></li>
 </ul></td>
 </tr>
 </tbody>
@@ -1119,6 +1121,7 @@ title: Index
 <li><a href="../rbac/management.permission/#management.permission.model.Permission.save">save() (management.permission.model.Permission method)</a>
 <ul>
 <li><a href="../rbac/management.role/#management.role.model.Access.save">(management.role.model.Access method)</a></li>
+<li><a href="../rbac/management.role/#management.role.model.Role.save">(management.role.model.Role method)</a></li>
 </ul></li>
 <li><a href="../rbac/management/#management.cache.AccessCache.save_policy">save_policy() (management.cache.AccessCache method)</a></li>
 <li><a href="../rbac/management.group/#management.group.definer.seed_group">seed_group() (in module management.group.definer)</a></li>
@@ -1132,9 +1135,9 @@ title: Index
 <li><a href="../rbac/management.group/#management.group.definer.set_system_flag_post_update">set_system_flag_post_update() (in module management.group.definer)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Access.split_permission">split_permission() (management.role.model.Access method)</a></li>
 <li><a href="../rbac/api.common/#api.common.pagination.StandardResultsSetPagination">StandardResultsSetPagination (class in api.common.pagination)</a></li>
-<li><a href="../rbac/api.status/#api.status.model.Status.startup">startup() (api.status.model.Status method)</a></li>
 </ul></td>
 <td><ul>
+<li><a href="../rbac/api.status/#api.status.model.Status.startup">startup() (api.status.model.Status method)</a></li>
 <li><a href="../rbac/api.status/#api.status.model.Status">Status (class in api.status.model)</a></li>
 <li><a href="../rbac/api.status/#api.status.view.status">status() (in module api.status.view)</a></li>
 <li><a href="../rbac/rbac/#rbac.middleware.HttpResponseUnauthorizedRequest.status_code">status_code (rbac.middleware.HttpResponseUnauthorizedRequest attribute)</a></li>

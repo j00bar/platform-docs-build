@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: management.principal package
 ---
 ### Navigation
@@ -178,7 +178,7 @@ View for principal management.
       -  ` get `  (  * request *  )  [ \[source\]
         ](../../_modules/management/principal/view/#PrincipalView.get)
           
-        List prinicpals for account.
+        List principals for account.
     
     <!-- end list -->
     

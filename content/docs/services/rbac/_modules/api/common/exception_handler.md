@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for api.common.exception\_handler
 ---
 ### Navigation
@@ -77,9 +77,9 @@ title: Source code for api.common.exception\_handler
             errors = []
             data = copy.deepcopy(response.data)
             if isinstance(data, dict):
-                errors += _generate_errors_from_dict(data, **{"status_code": response.status_code})
+                errors += _generate_errors_from_dict(data, **{"status_code": str(response.status_code)})
             elif isinstance(data, list):
-                errors += _generate_errors_from_list(data, **{"status_code": response.status_code})
+                errors += _generate_errors_from_list(data, **{"status_code": str(response.status_code)})
             error_response = {"errors": errors}
             response.data = error_response
     

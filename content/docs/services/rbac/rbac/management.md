@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: management package
 ---
 ### Navigation
@@ -178,6 +178,14 @@ Filters for RBAC.
     <!-- end list -->
     
       -  ` declared_filters ` *= {}* 
+    
+    <!-- end list -->
+    
+      -  ` multiple_values_in `  (  * queryset * , * field * , * values
+        *  )  [ \[source\]
+        ](../../_modules/management/filters/#CommonFilters.multiple_values_in)
+          
+        Filter for multiple value lookup.
     
     <!-- end list -->
     

@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.role.model
 ---
 ### Navigation
@@ -49,6 +49,7 @@ title: Source code for management.role.model
     
         uuid = models.UUIDField(default=uuid4, editable=False, unique=True, null=False)
         name = models.CharField(max_length=150, unique=True)
+        display_name = models.CharField(max_length=150, default="")
         description = models.TextField(null=True)
         system = models.BooleanField(default=False)
         platform_default = models.BooleanField(default=False)
@@ -63,6 +64,12 @@ title: Source code for management.role.model
     
         class Meta:
             ordering = ["name", "modified"]
+    
+    [docs]    def save(self, *args, **kwargs):
+            """Ensure that display_name is populated on save."""
+            if not self.display_name:
+                self.display_name = self.name
+            super(Role, self).save(*args, **kwargs)
     
     
     [docs]class CustomManager(models.Manager):

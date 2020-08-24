@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.filters
 ---
 ### Navigation
@@ -46,6 +46,14 @@ title: Source code for management.filters
                 return queryset.filter(name__icontains=value)
             elif match_criteria == "exact":
                 return queryset.filter(name__iexact=value)
+    
+    [docs]    def multiple_values_in(self, queryset, field, values):
+            """Filter for multiple value lookup."""
+            if isinstance(values, str):
+                values = values.split(",")
+    
+            filters = {f"{field}__in": values}
+            return queryset.filter(**filters)
 
 ### Quick search
 

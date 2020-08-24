@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.role.view
 ---
 ### Navigation
@@ -48,12 +48,17 @@ title: Source code for management.role.view
     from .serializer import RoleSerializer
     
     TESTING_APP = os.getenv("TESTING_APPLICATION")
-    APP_WHITELIST = ["cost-management", "remediations"]
+    APP_WHITELIST = [
+        "cost-management",
+        "remediations",
+        "inventory",
+    ]
     ADDITIONAL_FIELDS_KEY = "add_fields"
     VALID_FIELD_VALUES = ["groups_in_count", "groups_in"]
     LIST_ROLE_FIELDS = [
         "uuid",
         "name",
+        "display_name",
         "description",
         "created",
         "modified",
@@ -99,7 +104,7 @@ title: Source code for management.role.view
         lookup_field = "uuid"
         filter_backends = (filters.DjangoFilterBackend, OrderingFilter)
         filterset_class = RoleFilter
-        ordering_fields = ("name", "modified", "policyCount")
+        ordering_fields = ("name", "display_name", "modified", "policyCount")
         ordering = ("name",)
     
     [docs]    def get_queryset(self):
@@ -161,6 +166,7 @@ title: Source code for management.role.view
                 {
                     "uuid": "16fd2706-8baf-433b-82eb-8c7fada847da",
                     "name": "RoleA",
+                    "display_name": "RoleA",
                     "access": [
                         {
                         "permission": "app:*:read",
@@ -253,6 +259,7 @@ title: Source code for management.role.view
                 {
                     "uuid": "16fd2706-8baf-433b-82eb-8c7fada847da",
                     "name": "RoleA",
+                    "display_name": "RoleA",
                     "access": [
                         {
                         "permission": "app:*:read",
@@ -341,6 +348,7 @@ title: Source code for management.role.view
                 {
                     "uuid": "16fd2706-8baf-433b-82eb-8c7fada847da",
                     "name": "RoleA",
+                    "display_name": "RoleA",
                     "access": [
                         {
                         "permission": "app:*:read",

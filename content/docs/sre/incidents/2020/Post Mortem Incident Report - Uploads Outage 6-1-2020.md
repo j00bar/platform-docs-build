@@ -219,8 +219,8 @@ apology? (The apology should be genuine, not rote.)*
 
 **Kafka messsage production over the past 7 days, until 0906 CDT**
 
-![](media/image2.png)
+![](media/image3.png)
 
 **Platform engine processed count (averaged for an hour)**
 
-![](media/image3.png)
+![](media/image2.png)

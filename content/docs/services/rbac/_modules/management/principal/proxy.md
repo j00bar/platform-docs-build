@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.principal.proxy
 ---
 ### Navigation
@@ -37,7 +37,6 @@ title: Source code for management.principal.proxy
     from rest_framework import status
     
     from rbac.env import ENVIRONMENT
-    
     
     LOGGER = logging.getLogger(__name__)
     PROTOCOL = "protocol"
@@ -107,6 +106,7 @@ title: Source code for management.principal.proxy
                 "first_name": item.get("first_name"),
                 "last_name": item.get("last_name"),
                 "is_active": item.get("is_active"),
+                "is_org_admin": item.get("is_org_admin"),
             }
             return processed_item
     
@@ -144,7 +144,7 @@ title: Source code for management.principal.proxy
             headers = {USER_ENV_HEADER: self.user_env, CLIENT_ID_HEADER: self.client_id, API_TOKEN_HEADER: self.api_token}
             unexpected_error = {
                 "detail": "Unexpected error.",
-                "status": status.HTTP_500_INTERNAL_SERVER_ERROR,
+                "status": str(status.HTTP_500_INTERNAL_SERVER_ERROR),
                 "source": "principals",
             }
             try:
@@ -173,11 +173,11 @@ title: Source code for management.principal.proxy
                     resp["status_code"] = status.HTTP_500_INTERNAL_SERVER_ERROR
                     error = unexpected_error
             elif response.status_code == status.HTTP_404_NOT_FOUND:
-                error = {"detail": "Not Found.", "status": response.status_code, "source": "principals"}
+                error = {"detail": "Not Found.", "status": str(response.status_code), "source": "principals"}
             else:
                 LOGGER.error("Error calling URL %s -- status=%d", url, response.status_code)
                 error = unexpected_error
-                error["status"] = response.status_code
+                error["status"] = str(response.status_code)
             if error:
                 resp["errors"] = [error]
             return resp

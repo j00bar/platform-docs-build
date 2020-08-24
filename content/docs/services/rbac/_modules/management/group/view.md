@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.group.view
 ---
 ### Navigation
@@ -86,9 +86,7 @@ title: Source code for management.group.view
                     key = "groups uuid filter"
                     message = f"{uuid} is not a valid UUID."
                     raise serializers.ValidationError({key: _(message)})
-            filters = {f"{field}__in": uuids}
-            filtered_set = queryset.filter(**filters)
-            return filtered_set
+            return CommonFilters.multiple_values_in(self, queryset, field, values)
     
     [docs]    def roles_filter(self, queryset, field, values):
             """Filter for group to lookup list of role name."""

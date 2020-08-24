@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.role.serializer
 ---
 ### Navigation
@@ -79,6 +79,7 @@ title: Source code for management.role.serializer
         name = serializers.CharField(
             required=True, max_length=150, validators=[UniqueValidator(queryset=Role.objects.all())]
         )
+        display_name = serializers.CharField(required=False, max_length=150, allow_blank=True)
         description = serializers.CharField(allow_null=True, required=False)
         access = AccessSerializer(many=True)
         policyCount = serializers.IntegerField(read_only=True)
@@ -96,6 +97,7 @@ title: Source code for management.role.serializer
             fields = (
                 "uuid",
                 "name",
+                "display_name",
                 "description",
                 "access",
                 "policyCount",
@@ -114,9 +116,10 @@ title: Source code for management.role.serializer
     [docs]    def create(self, validated_data):
             """Create the role object in the database."""
             name = validated_data.pop("name")
+            display_name = validated_data.pop("display_name", name)
             description = validated_data.pop("description", None)
             access_list = validated_data.pop("access")
-            role = Role.objects.create(name=name, description=description)
+            role = Role.objects.create(name=name, description=description, display_name=display_name)
             role.save()
             for access_item in access_list:
                 resource_def_list = access_item.pop("resourceDefinitions")
@@ -136,6 +139,7 @@ title: Source code for management.role.serializer
                 raise serializers.ValidationError(error)
             access_list = validated_data.pop("access")
             instance.name = validated_data.get("name", instance.name)
+            instance.display_name = validated_data.get("display_name", instance.display_name)
             instance.description = validated_data.get("description", instance.description)
             instance.save()
             instance.access.all().delete()
@@ -157,6 +161,7 @@ title: Source code for management.role.serializer
     
         uuid = serializers.UUIDField(read_only=True)
         name = serializers.CharField(required=True, max_length=150)
+        display_name = serializers.CharField(required=False, max_length=150, allow_blank=True)
         description = serializers.CharField(allow_null=True, required=False)
         created = serializers.DateTimeField(read_only=True)
         modified = serializers.DateTimeField(read_only=True)
@@ -173,6 +178,7 @@ title: Source code for management.role.serializer
             fields = (
                 "uuid",
                 "name",
+                "display_name",
                 "description",
                 "created",
                 "modified",
@@ -211,6 +217,7 @@ title: Source code for management.role.serializer
     
         uuid = serializers.UUIDField(read_only=True)
         name = serializers.CharField(required=True, max_length=150)
+        display_name = serializers.CharField(required=False, max_length=150, allow_blank=True)
         description = serializers.CharField(allow_null=True, required=False)
         created = serializers.DateTimeField(read_only=True)
         modified = serializers.DateTimeField(read_only=True)
@@ -229,6 +236,7 @@ title: Source code for management.role.serializer
             fields = (
                 "uuid",
                 "name",
+                "display_name",
                 "description",
                 "created",
                 "modified",

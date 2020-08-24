@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: management.permission package
 ---
 ### Navigation
@@ -109,7 +109,8 @@ View for permission management.
     data   =   None * , * queryset   =   None * , * \* * , * request   =
       None * , * prefix   =   None *  )  [ \[source\]
     ](../../_modules/management/permission/view/#PermissionFilter)   
-    Bases: ` django_filters.rest_framework.filterset.FilterSet `
+    Bases: [` management.filters.CommonFilters
+    `](../management/#management.filters.CommonFilters "management.filters.CommonFilters")
     
     Filter for role.
     

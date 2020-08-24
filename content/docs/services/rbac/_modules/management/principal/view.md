@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.principal.view
 ---
 ### Navigation
@@ -91,7 +91,7 @@ title: Source code for management.principal.view
         permission_classes = (AdminAccessPermission,)
     
     [docs]    def get(self, request):
-            """List prinicpals for account."""
+            """List principals for account."""
             proxy = PrincipalProxy()
             user = self.request.user
             path = self.request.path
@@ -109,7 +109,7 @@ title: Source code for management.principal.view
                 error = {
                     "detail": "Values for limit and offset must be positive numbers.",
                     "source": "principals",
-                    "status": status.HTTP_400_BAD_REQUEST,
+                    "status": str(status.HTTP_400_BAD_REQUEST),
                 }
                 errors = {"errors": [error]}
                 return Response(status=status.HTTP_400_BAD_REQUEST, data=errors)

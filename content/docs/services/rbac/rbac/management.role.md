@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: management.role package
 ---
 ### Navigation
@@ -246,6 +246,12 @@ Model for role management.
     
     <!-- end list -->
     
+      -  ` display_name `   
+        A wrapper for a deferred-loading field. When the value is read
+        from this object the first time, the query is executed.
+    
+    <!-- end list -->
+    
       -  ` get_next_by_created `  (  *\** ,
         *field=\<django.db.models.fields.DateTimeField: created\>* ,
         *is\_next=True* , *\*\*kwargs*  )  
@@ -318,6 +324,12 @@ Model for role management.
     
       -  *property* ` role `   
         Get role for self.
+    
+    <!-- end list -->
+    
+      -  ` save `  (  * \*   args * , * \*\*   kwargs *  )  [ \[source\]
+        ](../../_modules/management/role/model/#Role.save)   
+        Ensure that display\_name is populated on save.
     
     <!-- end list -->
     
@@ -437,10 +449,10 @@ Serializer for role management.
         
         Metadata for the serializer.
         
-          -  ` fields ` *= ('uuid', 'name', 'description', 'created',
-            'modified', 'policyCount', 'groups\_in',
-            'groups\_in\_count', 'accessCount', 'applications',
-            'system', 'platform\_default')* 
+          -  ` fields ` *= ('uuid', 'name', 'display\_name',
+            'description', 'created', 'modified', 'policyCount',
+            'groups\_in', 'groups\_in\_count', 'accessCount',
+            'applications', 'system', 'platform\_default')* 
         
         <!-- end list -->
         
@@ -487,9 +499,10 @@ Serializer for role management.
         
         Metadata for the serializer.
         
-          -  ` fields ` *= ('uuid', 'name', 'description', 'created',
-            'modified', 'policyCount', 'accessCount', 'applications',
-            'system', 'platform\_default')* 
+          -  ` fields ` *= ('uuid', 'name', 'display\_name',
+            'description', 'created', 'modified', 'policyCount',
+            'accessCount', 'applications', 'system',
+            'platform\_default')* 
         
         <!-- end list -->
         
@@ -521,9 +534,10 @@ Serializer for role management.
         
         Metadata for the serializer.
         
-          -  ` fields ` *= ('uuid', 'name', 'description', 'access',
-            'policyCount', 'accessCount', 'applications', 'system',
-            'platform\_default', 'created', 'modified')* 
+          -  ` fields ` *= ('uuid', 'name', 'display\_name',
+            'description', 'access', 'policyCount', 'accessCount',
+            'applications', 'system', 'platform\_default', 'created',
+            'modified')* 
         
         <!-- end list -->
         
@@ -671,7 +685,7 @@ View for role management.
         > HTTP/1.1 201 CREATED {
         > 
         > > “uuid”: “16fd2706-8baf-433b-82eb-8c7fada847da”, “name”:
-        > > “RoleA”, “access”: \[
+        > > “RoleA”, “display\_name”: “RoleA”, “access”: \[
         > > 
         > > > { “permission”: “app: [ \* ](#id3) :read”,
         > > > “resourceDefinitions”: \[
@@ -815,7 +829,8 @@ View for role management.
     
     <!-- end list -->
     
-      -  ` ordering_fields ` *= ('name', 'modified', 'policyCount')* 
+      -  ` ordering_fields ` *= ('name', 'display\_name', 'modified',
+        'policyCount')* 
     
     <!-- end list -->
     
@@ -847,7 +862,7 @@ View for role management.
         > HTTP/1.1 200 OK {
         > 
         > > “uuid”: “16fd2706-8baf-433b-82eb-8c7fada847da”, “name”:
-        > > “RoleA”, “access”: \[
+        > > “RoleA”, “display\_name”: “RoleA”, “access”: \[
         > > 
         > > > { “permission”: “app: [ \* ](#id5) :read”,
         > > > “resourceDefinitions”: \[
@@ -922,7 +937,7 @@ View for role management.
         > HTTP/1.1 200 OK {
         > 
         > > “uuid”: “16fd2706-8baf-433b-82eb-8c7fada847da”, “name”:
-        > > “RoleA”, “access”: \[
+        > > “RoleA”, “display\_name”: “RoleA”, “access”: \[
         > > 
         > > > { “permission”: “app: [ \* ](#id9) :read”,
         > > > “resourceDefinitions”: \[

@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.permission.view
 ---
 ### Navigation
@@ -29,6 +29,7 @@ title: Source code for management.permission.view
     
     """View for permission management."""
     from django_filters import rest_framework as filters
+    from management.filters import CommonFilters
     from management.models import Permission
     from management.permission.serializer import PermissionSerializer
     from management.permissions.admin_access import AdminAccessPermission
@@ -36,12 +37,12 @@ title: Source code for management.permission.view
     from rest_framework.filters import OrderingFilter
     
     
-    [docs]class PermissionFilter(filters.FilterSet):
+    [docs]class PermissionFilter(CommonFilters):
         """Filter for role."""
     
-        application = filters.CharFilter(field_name="application", lookup_expr="icontains")
-        resource_type = filters.CharFilter(field_name="resource_type", lookup_expr="icontains")
-        verb = filters.CharFilter(field_name="verb", lookup_expr="icontains")
+        application = filters.CharFilter(field_name="application", method="multiple_values_in")
+        resource_type = filters.CharFilter(field_name="resource_type", method="multiple_values_in")
+        verb = filters.CharFilter(field_name="verb", method="multiple_values_in")
         permission = filters.CharFilter(field_name="permission", lookup_expr="icontains")
     
     

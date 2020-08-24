@@ -1,5 +1,5 @@
 ---
-date: 2020-08-11 18:56:04.425964
+date: 2020-08-24 20:29:21.726797
 title: Source code for management.role.definer
 ---
 ### Navigation
@@ -44,6 +44,7 @@ title: Source code for management.role.definer
     def _make_role(tenant, data):
         """Create the role object in the database."""
         name = data.pop("name")
+        display_name = data.get("display_name", name)
         access_list = data.get("access")
         defaults = dict(
             description=data.get("description", None),
@@ -53,10 +54,13 @@ title: Source code for management.role.definer
         )
         role, created = Role.objects.get_or_create(name=name, defaults=defaults)
         if created:
+            if role.display_name != display_name:
+                role.display_name = display_name
+                role.save()
             logger.info("Created role %s for tenant %s.", name, tenant.schema_name)
         else:
             if role.version != defaults["version"]:
-                Role.objects.filter(name=name).update(**defaults)
+                Role.objects.filter(name=name).update(**defaults, display_name=display_name)
                 logger.info("Updated role %s for tenant %s.", name, tenant.schema_name)
                 role.access.all().delete()
             else:
@@ -73,7 +77,13 @@ title: Source code for management.role.definer
     def _update_or_create_roles(tenant, roles):
         """Update or create roles from list."""
         for role_json in roles:
-            _make_role(tenant, role_json)
+            try:
+                _make_role(tenant, role_json)
+            except Exception as e:
+                logger.error(
+                    f"Failed to update or create role: {role_json.get('name')} "
+                    f"for tenant: {tenant.schema_name} with error: {e}"
+                )
     
     
     [docs]def seed_roles(tenant):
@@ -113,16 +123,22 @@ title: Source code for management.role.definer
                     with open(permission_file_path) as json_file:
                         data = json.load(json_file)
                         for resource, operations in data.items():
-                            for operation in operations:
-                                permission, created = Permission.objects.update_or_create(
-                                    permission=f"{app_name}:{resource}:{operation}"
-                                )
-                                if created:
-                                    logger.info(
-                                        f"Created permission {permission.permission} \
-                                        for tenant {tenant.schema_name}."
+                            try:
+                                for operation in operations:
+                                    permission, created = Permission.objects.update_or_create(
+                                        permission=f"{app_name}:{resource}:{operation}"
                                     )
-                                # current_permission_ids.add(permission.id)
+                                    if created:
+                                        logger.info(
+                                            f"Created permission {permission.permission} "
+                                            f"for tenant {tenant.schema_name}."
+                                        )
+                                    # current_permission_ids.add(permission.id)
+                            except Exception as e:
+                                logger.error(
+                                    f"Failed to update or create permissions for: "
+                                    f"{app_name}:{resource} for tenant: {tenant.schema_name} with error: {e}"
+                                )
     
                 # TODO: Remove permissions that are no longer exist, could enable later after enforcing
                 # all available permission from the permissions files (there might be some custom ones for
