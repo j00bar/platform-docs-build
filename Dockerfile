@@ -19,4 +19,4 @@ RUN yum install -y git nodejs unzip nginx && \
     yum clean all
 WORKDIR /app/platform-docs/public
 EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off; pid /dev/null;"]
