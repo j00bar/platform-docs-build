@@ -215,7 +215,7 @@ apology? (The apology should be genuine, not rote.)*
 
 **Ingress load, until=0850 CDT**
 
-![](media/image1.png)
+![](media/image2.png)
 
 **Kafka messsage production over the past 7 days, until 0906 CDT**
 
@@ -223,4 +223,4 @@ apology? (The apology should be genuine, not rote.)*
 
 **Platform engine processed count (averaged for an hour)**
 
-![](media/image2.png)
+![](media/image1.png)
