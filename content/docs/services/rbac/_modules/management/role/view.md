@@ -1,5 +1,5 @@
 ---
-date: 2020-08-25 00:00:48.985413
+date: 2020-08-30 15:57:27.713836
 title: Source code for management.role.view
 ---
 ### Navigation
@@ -40,6 +40,7 @@ title: Source code for management.role.view
     from management.permissions import RoleAccessPermission
     from management.querysets import get_role_queryset
     from management.role.serializer import AccessSerializer, RoleDynamicSerializer
+    from management.utils import validate_uuid
     from rest_framework import mixins, serializers, viewsets
     from rest_framework.decorators import action
     from rest_framework.filters import OrderingFilter
@@ -276,6 +277,7 @@ title: Source code for management.role.view
                     ]
                 }
             """
+            validate_uuid(kwargs.get("uuid"), "role uuid validation")
             return super().retrieve(request=request, args=args, kwargs=kwargs)
     
     [docs]    def destroy(self, request, *args, **kwargs):
@@ -294,6 +296,7 @@ title: Source code for management.role.view
             @apiSuccessExample {json} Success-Response:
                 HTTP/1.1 204 NO CONTENT
             """
+            validate_uuid(kwargs.get("uuid"), "role uuid validation")
             role = self.get_object()
             if role.system or role.platform_default:
                 key = "role"
@@ -365,11 +368,13 @@ title: Source code for management.role.view
                     ]
                 }
             """
+            validate_uuid(kwargs.get("uuid"), "role uuid validation")
             return super().update(request=request, args=args, kwargs=kwargs)
     
     [docs]    @action(detail=True, methods=["get"])
         def access(self, request, uuid=None):
             """Return access objects for specified role."""
+            validate_uuid(uuid, "role uuid validation")
             try:
                 role = Role.objects.get(uuid=uuid)
             except (Role.DoesNotExist, ValidationError):

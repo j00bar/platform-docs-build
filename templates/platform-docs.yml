@@ -51,6 +51,7 @@ objects:
 parameters:
   - description: Platform Docs image name
     name: IMAGE_NAME
+    value: quay.io/cloudservices/platform-docs
     required: true
   - description: Platform Docs image tag
     name: IMAGE_TAG

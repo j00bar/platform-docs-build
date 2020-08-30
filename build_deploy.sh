@@ -15,5 +15,7 @@ mkdir -p "$DOCKER_CONF"
 docker --config="$DOCKER_CONF" login -u="$QUAY_USER" -p="$QUAY_TOKEN" quay.io
 
 docker --config="$DOCKER_CONF" build -t "${PLATFORM_DOCS_IMAGE}:${IMAGE_TAG}" .
-
 docker --config="$DOCKER_CONF" push "${PLATFORM_DOCS_IMAGE}:${IMAGE_TAG}"
+
+docker --config="$DOCKER_CONF" tag "${PLATFORM_DOCS_IMAGE}:${IMAGE_TAG}" "${PLATFORM_DOCS_IMAGE}:latest"
+docker --config="$DOCKER_CONF" push "${PLATFORM_DOCS_IMAGE}:latest"

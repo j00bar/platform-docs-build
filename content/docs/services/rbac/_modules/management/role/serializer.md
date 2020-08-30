@@ -1,5 +1,5 @@
 ---
-date: 2020-08-25 00:00:48.985413
+date: 2020-08-30 15:57:27.713836
 title: Source code for management.role.serializer
 ---
 ### Navigation
@@ -111,7 +111,7 @@ title: Source code for management.role.serializer
     
     [docs]    def get_applications(self, obj):
             """Get the list of applications in the role."""
-            obtain_applications(obj)
+            return obtain_applications(obj)
     
     [docs]    def create(self, validated_data):
             """Create the role object in the database."""

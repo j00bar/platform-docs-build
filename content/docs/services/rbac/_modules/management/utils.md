@@ -1,5 +1,5 @@
 ---
-date: 2020-08-25 00:00:48.985413
+date: 2020-08-30 15:57:27.713836
 title: Source code for management.utils
 ---
 ### Navigation
@@ -29,6 +29,7 @@ title: Source code for management.utils
     """Helper utilities for management module."""
     import json
     import os
+    from uuid import UUID
     
     from django.core.exceptions import PermissionDenied
     from django.utils.translation import gettext as _
@@ -171,6 +172,16 @@ title: Source code for management.utils
             message = "{} query parameter value {} is invalid. {} are valid inputs.".format(query_key, value, valid_values)
             raise serializers.ValidationError({key: _(message)})
         return value
+    
+    
+    [docs]def validate_uuid(uuid, key="UUID Validation"):
+        """Verify UUID provided is valid."""
+        try:
+            UUID(uuid)
+        except ValueError:
+            key = key
+            message = f"{uuid} is not a valid UUID."
+            raise serializers.ValidationError({key: _(message)})
 
 ### Quick search
 

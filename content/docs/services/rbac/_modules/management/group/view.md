@@ -1,5 +1,5 @@
 ---
-date: 2020-08-25 00:00:48.985413
+date: 2020-08-30 15:57:27.713836
 title: Source code for management.group.view
 ---
 ### Navigation
@@ -29,7 +29,6 @@ title: Source code for management.group.view
     
     """View for group management."""
     import logging
-    from uuid import UUID
     
     from django.db.models.aggregates import Count
     from django.utils.translation import gettext as _
@@ -52,7 +51,7 @@ title: Source code for management.group.view
     from management.querysets import get_group_queryset, get_object_principal_queryset
     from management.role.model import Role
     from management.role.view import RoleViewSet
-    from management.utils import validate_and_get_key
+    from management.utils import validate_and_get_key, validate_uuid
     from rest_framework import mixins, serializers, status, viewsets
     from rest_framework.decorators import action
     from rest_framework.filters import OrderingFilter
@@ -80,12 +79,7 @@ title: Source code for management.group.view
             """Filter for group uuid lookup."""
             uuids = values.split(",")
             for uuid in uuids:
-                try:
-                    UUID(uuid)
-                except ValueError:
-                    key = "groups uuid filter"
-                    message = f"{uuid} is not a valid UUID."
-                    raise serializers.ValidationError({key: _(message)})
+                validate_uuid(uuid, "groups uuid filter")
             return CommonFilters.multiple_values_in(self, queryset, field, values)
     
     [docs]    def roles_filter(self, queryset, field, values):
@@ -279,6 +273,7 @@ title: Source code for management.group.view
                     ]
                 }
             """
+            validate_uuid(kwargs.get("uuid"), "group uuid validation")
             return super().retrieve(request=request, args=args, kwargs=kwargs)
     
     [docs]    def destroy(self, request, *args, **kwargs):
@@ -297,6 +292,7 @@ title: Source code for management.group.view
             @apiSuccessExample {json} Success-Response:
                 HTTP/1.1 204 NO CONTENT
             """
+            validate_uuid(kwargs.get("uuid"), "group uuid validation")
             self.protect_default_groups("delete")
             return super().destroy(request=request, args=args, kwargs=kwargs)
     
@@ -322,6 +318,7 @@ title: Source code for management.group.view
                     "name": "GroupA"
                 }
             """
+            validate_uuid(kwargs.get("uuid"), "group uuid validation")
             self.protect_default_groups("update")
             return super().update(request=request, args=args, kwargs=kwargs)
     
@@ -433,6 +430,7 @@ title: Source code for management.group.view
                 HTTP/1.1 204 NO CONTENT
             """
             principals = []
+            validate_uuid(uuid, "group uuid validation")
             group = self.get_object()
             account = self.request.user.account
             if request.method == "POST":
@@ -559,6 +557,7 @@ title: Source code for management.group.view
                 HTTP/1.1 204 NO CONTENT
             """
             roles = []
+            validate_uuid(uuid, "group uuid validation")
             group = self.get_object()
             if request.method == "POST":
                 serializer = GroupRoleSerializerIn(data=request.data)

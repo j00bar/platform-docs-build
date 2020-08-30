@@ -1,5 +1,5 @@
 ---
-date: 2020-08-25 00:00:48.985413
+date: 2020-08-30 15:57:27.713836
 title: management package
 ---
 ### Navigation
@@ -408,6 +408,13 @@ Helper utilities for management module.
   -  ` management.utils. ` ` validate_psk `  (  * psk * , * client\_id *
      )  [ \[source\] ](../../_modules/management/utils/#validate_psk)   
     Validate the PSK for the client.
+
+<!-- end list -->
+
+  -  ` management.utils. ` ` validate_uuid `  (  * uuid * , * key   =  
+    'UUID Validation' *  )  [ \[source\]
+    ](../../_modules/management/utils/#validate_uuid)   
+    Verify UUID provided is valid.
 
 ## management.views module
 

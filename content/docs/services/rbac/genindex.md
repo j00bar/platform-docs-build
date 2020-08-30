@@ -1,5 +1,5 @@
 ---
-date: 2020-08-25 00:00:48.985413
+date: 2020-08-30 15:57:27.713836
 title: Index
 ---
 ### Navigation
@@ -1234,10 +1234,11 @@ title: Index
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.validate_and_get_access_list">validate_and_get_access_list() (management.role.view.RoleViewSet method)</a></li>
 <li><a href="../rbac/management.role/#management.role.view.RoleViewSet.validate_and_get_additional_field_key">validate_and_get_additional_field_key() (management.role.view.RoleViewSet method)</a></li>
 <li><a href="../rbac/management/#management.utils.validate_and_get_key">validate_and_get_key() (in module management.utils)</a></li>
+<li><a href="../rbac/management.role/#management.role.serializer.AccessSerializer.validate_permission">validate_permission() (management.role.serializer.AccessSerializer method)</a></li>
 </ul></td>
 <td><ul>
-<li><a href="../rbac/management.role/#management.role.serializer.AccessSerializer.validate_permission">validate_permission() (management.role.serializer.AccessSerializer method)</a></li>
 <li><a href="../rbac/management/#management.utils.validate_psk">validate_psk() (in module management.utils)</a></li>
+<li><a href="../rbac/management/#management.utils.validate_uuid">validate_uuid() (in module management.utils)</a></li>
 <li><a href="../rbac/management.permission/#management.permission.model.Permission.verb">verb (management.permission.model.Permission attribute)</a></li>
 <li><a href="../rbac/management.role/#management.role.model.Role.version">version (management.role.model.Role attribute)</a></li>
 </ul></td>
